@@ -7,14 +7,16 @@ public class Swipe : MonoBehaviour
 {
     //animation variable
     public GameObject Container;
-    public UIManagerScript _MoveUI;
+
+    //scripts
+    UIManagerScript ManagerUI;
 
     //swipe variables
     [Range(0.1f, 10f)]
     public float minTime;
     [Range(0.1f, 10f)]
     public float maxTime;
-    [Range(100, 1000)]
+    [Range(10, 1000)]
     public int minSwipeDist;
 
     float startTime;
@@ -26,7 +28,11 @@ public class Swipe : MonoBehaviour
     float swipeDist;
     float swipeTime;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        UIManagerScript ManagerUI = GetComponent<UIManagerScript>();
+    }
+
     void Start()
     {
         minTime = 0.2f;
@@ -34,7 +40,6 @@ public class Swipe : MonoBehaviour
         minSwipeDist = 50;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.touchCount > 0)
@@ -86,12 +91,12 @@ public class Swipe : MonoBehaviour
             if (distance.y > 0)
             {
                 Debug.Log("Up Swipe");
-                Container.transform.DOMoveY(Screen.height/3f, _MoveUI.time).SetEase(Ease.OutBack);
+                Container.transform.DOMoveY(Screen.height/3f, ManagerUI.time).SetEase(Ease.OutBack);
             }
             else if (distance.y < 0)
             {
                 Debug.Log("Down Swipe");
-                Container.transform.DOMoveY(0, _MoveUI.time).SetEase(Ease.OutBack);
+                Container.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
             }
         }
     }

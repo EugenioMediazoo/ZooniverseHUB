@@ -8,19 +8,18 @@ public class UIManagerScript : MonoBehaviour
 {
     //Images and gameObjects
     public Image CaseStudy;
+    public Image About;
 
     //time
     [Range(0.01f, 3f)]
     public float time;
 
     //Heights
-    public float screenHeight = Screen.height;
+    private float screenHeight = Screen.height;
 
     //bools
     private bool CaseStudyStatus;
     private bool AboutStatus;
-
-    public bool ButtonTestB = false;
 
     private void Awake()
     {
@@ -39,7 +38,7 @@ public class UIManagerScript : MonoBehaviour
     {
         if (!CaseStudyStatus)
         {
-            CaseStudy.transform.DOMoveY((screenHeight / 2f), time).SetEase(Ease.OutBack);
+            CaseStudy.transform.DOMoveY((screenHeight/2f), time).SetEase(Ease.OutBack);
             CaseStudyStatus = !CaseStudyStatus;
         }
         else if(CaseStudyStatus)
@@ -53,12 +52,12 @@ public class UIManagerScript : MonoBehaviour
     {
         if (!AboutStatus)
         {
-            CaseStudy.transform.DOMoveY((screenHeight / 2f), time).SetEase(Ease.OutBack);
+            About.transform.DOMoveY((screenHeight/2f), time).SetEase(Ease.OutBack);
             AboutStatus = !AboutStatus;
         }
         else if (AboutStatus)
         {
-            CaseStudy.transform.DOMoveY(((screenHeight / 2f) * -1), time).SetEase(Ease.OutBack);
+            About.transform.DOMoveY(((screenHeight/2f) * -1), time).SetEase(Ease.OutBack);
             AboutStatus = !AboutStatus;
         }
     }
