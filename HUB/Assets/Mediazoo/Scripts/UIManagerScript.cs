@@ -29,26 +29,27 @@ public class UIManagerScript : MonoBehaviour
         CaseStudyStatus = false;
         AboutStatus = false;
 
-        float ratio = Screen.width / Screen.height;
-
-        if (ratio >= 0.45f)
-        {
-            Debug.Log("9:19.5");
-        }
-        else if (ratio >= 0.5f)
-        {
-            Debug.Log("9:18");
-        }
-        else if (ratio >= 0.55f)
-        {
-            Debug.Log("9:16");
-        }
+       
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        double ratio = Screen.height / Screen.width;
+        Debug.Log(ratio + "," + Screen.width + "," + Screen.height);
 
+        if (ratio >= .9f && ratio <= 1.99f)
+        {
+            Debug.Log("9:16");
+        }
+        else if (ratio >= 2f && ratio<= 2.14f)
+        {
+            Debug.Log("9:18");
+        }
+        else if (ratio >= 2.15f)
+        {
+            Debug.Log("9:19.5");
+        }
     }
 
     public void CaseStudySlider()
