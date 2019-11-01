@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
+    //Buttons
+    public Button CaseStudySwipeDetected;
+    public Button AboutSwipeDetected;
+
     //animation variable
-    public GameObject Container;
+    public GameObject SlideCaseStudyBG; 
+    public GameObject SlideAboutBG;
+
 
     //scripts
     UIManagerScript ManagerUI;
@@ -50,7 +57,6 @@ public class Swipe : MonoBehaviour
             {
                 startTime = Time.time;
                 startPos = touch.position;
-
             }
             else if (touch.phase == TouchPhase.Ended)
             {
@@ -66,6 +72,16 @@ public class Swipe : MonoBehaviour
                 }
             }
         }
+
+        //if (CaseStudySwipeDetected.GetComponent<buttonDebug>().selected)
+        //{
+        //    Debug.Log("readytoSwipe1");
+        //}
+
+        //if (AboutSwipeDetected.GetComponent<buttonDebug>().selected)
+        //{
+        //    Debug.Log("readytoSwipe2");
+        //}
     }
 
     void Swipeing()
@@ -91,12 +107,48 @@ public class Swipe : MonoBehaviour
             if (distance.y > 0)
             {
                 Debug.Log("Up Swipe");
-                Container.transform.DOMoveY(Screen.height/3f, ManagerUI.time).SetEase(Ease.OutBack);
+
+                if (CaseStudySwipeDetected != null)
+                {
+                    if (CaseStudySwipeDetected.GetComponent<buttonDebug>().selected)
+                    {
+                        Debug.Log("readytoSwipe");
+                        SlideCaseStudyBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
+                    }
+                }
+
+                if (AboutSwipeDetected != null)
+                {
+                    if (AboutSwipeDetected.GetComponent<buttonDebug>().selected)
+                    {
+                        Debug.Log("readytoSwipe");
+                        SlideAboutBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
+                    }
+                }
+
             }
             else if (distance.y < 0)
             {
                 Debug.Log("Down Swipe");
-                Container.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
+                
+                if (CaseStudySwipeDetected != null)
+                {
+                    if(CaseStudySwipeDetected.GetComponent<buttonDebug>().selected)
+                    {
+                        Debug.Log("readytoSwipe");
+                        SlideCaseStudyBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
+                    }
+                }
+
+                if (AboutSwipeDetected != null)
+                {
+                    if (AboutSwipeDetected.GetComponent<buttonDebug>().selected)
+                    {
+                        Debug.Log("readytoSwipe");
+                        SlideAboutBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
+                    }
+                }
+
             }
         }
     }

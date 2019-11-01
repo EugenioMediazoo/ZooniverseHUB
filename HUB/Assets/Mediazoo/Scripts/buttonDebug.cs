@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class buttonDebug : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [HideInInspector]
+    public bool selected=false;
+
+    public void changeBool()
     {
-        
+        selected = !selected;
+        Invoke("changeBack", 1);
     }
 
-    // Update is called once per frame
-    void Update()
+    void changeBack()
     {
-        
+        selected = !selected;
     }
 
     public void ButtonDebugP()
