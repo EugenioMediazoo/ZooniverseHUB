@@ -28,8 +28,6 @@ public class UIManagerScript : MonoBehaviour
         screenHeight = Screen.height;
         CaseStudyStatus = false;
         AboutStatus = false;
-
-       
     }
 
     // Start is called before the first frame update
@@ -87,6 +85,7 @@ public class UIManagerScript : MonoBehaviour
         {
             if (_button.CompareTag("Zooniverse"))
             {
+                //SceneManager.LoadScene("AR", LoadSceneMode.Single);
                 Debug.Log(_button.tag);
             }
         }
