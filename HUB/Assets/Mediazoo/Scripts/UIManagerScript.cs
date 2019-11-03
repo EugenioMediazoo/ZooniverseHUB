@@ -12,12 +12,17 @@ public class UIManagerScript : MonoBehaviour
     public Image CaseStudy;
     public Image About;
 
+    //public GameObject ContainerRatio;
+    public RectTransform ContainerRatio;
+
     //time
     [Range(0.01f, 3f)]
     public float time;
 
     //Heights
-    private float screenHeight = Screen.height;
+    private float screenHeight;
+    private float screenWidth;
+    private double ratio;
 
     //bools
     private bool CaseStudyStatus;
@@ -26,55 +31,133 @@ public class UIManagerScript : MonoBehaviour
     private void Awake()
     {
         screenHeight = Screen.height;
+        screenWidth = Screen.width;
         CaseStudyStatus = false;
         AboutStatus = false;
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
         double ratio = Screen.height / Screen.width;
         Debug.Log(ratio + "," + Screen.width + "," + Screen.height);
 
         if (ratio >= .9f && ratio <= 1.99f)
         {
             Debug.Log("9:16");
+            
+            ContainerRatio.anchoredPosition = new Vector2(0, 200f);
+            Debug.Log(ContainerRatio.anchoredPosition);
         }
-        else if (ratio >= 2f && ratio<= 2.14f)
+        else if (ratio >= 2f && ratio <= 2.09f)
         {
             Debug.Log("9:18");
+            Debug.Log(ContainerRatio.anchoredPosition);
         }
-        else if (ratio >= 2.15f)
+        else /*if (ratio >= 2.15f)*/
         {
             Debug.Log("9:19.5");
+            
+            ContainerRatio.anchoredPosition = new Vector2(0, -200f);
+            Debug.Log(ContainerRatio.anchoredPosition);
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        ratio = Screen.height / Screen.width;
+        Debug.Log(ratio + "," + Screen.width + "," + Screen.height);
+
+        if (ratio >= .9f && ratio <= 1.99f)
+        {
+            Debug.Log("9:16");
+            
+            ContainerRatio.anchoredPosition = new Vector2(0, 200f);
+            Debug.Log(ContainerRatio.anchoredPosition);
+        }
+        else if (ratio >= 2f && ratio <= 2.09f)
+        {
+            Debug.Log("9:18");
+            Debug.Log(ContainerRatio.anchoredPosition);
+
+        }
+        else /*if (ratio >= 2.11f)*/
+        {
+            Debug.Log("9:19.5");
+            
+            ContainerRatio.anchoredPosition = new Vector2(0, -200f);
+            Debug.Log(ContainerRatio.anchoredPosition);
+        }
+    }
+
+    private void Update()
+    {
+        Debug.Log(Screen.height + "," + Screen.width);
+        Debug.Log(ratio);
     }
 
     public void CaseStudySlider()
     {
-        if (!CaseStudyStatus)
+        if (ratio <= 1.99f)
         {
-            CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.OutBack);
-            CaseStudyStatus = !CaseStudyStatus;
+            if (!CaseStudyStatus)
+            {
+                CaseStudy.transform.DOMoveY((screenHeight * 0.36f), time).SetEase(Ease.OutBack);
+                CaseStudyStatus = !CaseStudyStatus;
+            }
+            else if (CaseStudyStatus)
+            {
+                CaseStudy.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.OutBack);
+                CaseStudyStatus = !CaseStudyStatus;
+                About.transform.DOMoveY(((screenHeight * 0.443f) * -1), time).SetEase(Ease.OutBack);
+                AboutStatus = !AboutStatus;
+            }
         }
-        else if (CaseStudyStatus)
+        else if (ratio >= 2f)
         {
-            CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.OutBack);
-            CaseStudyStatus = !CaseStudyStatus;
+            if (!CaseStudyStatus)
+            {
+                CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.OutBack);
+                CaseStudyStatus = !CaseStudyStatus;
+            }
+            else if (CaseStudyStatus)
+            {
+                CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.OutBack);
+                CaseStudyStatus = !CaseStudyStatus;
+                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.OutBack);
+                AboutStatus = !AboutStatus;
+            }
         }
     }
 
     public void AboutSlider()
     {
-        if (!AboutStatus)
+        if (ratio <= 1.99f)
         {
-            About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.OutBack);
-            AboutStatus = !AboutStatus;
+            if (!AboutStatus)
+            {
+                About.transform.DOMoveY((screenHeight * 0.24f), time).SetEase(Ease.OutBack);
+                AboutStatus = !AboutStatus;
+                CaseStudy.transform.DOMoveY((screenHeight * 0.36f), time).SetEase(Ease.OutBack);
+                CaseStudyStatus = !CaseStudyStatus;
+            }
+            else if (AboutStatus)
+            {
+                About.transform.DOMoveY(((screenHeight * 0.443f) * -1), time).SetEase(Ease.OutBack);
+                AboutStatus = !AboutStatus;
+            }
         }
-        else if (AboutStatus)
+        else if (ratio >= 2f)
         {
-            About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.OutBack);
-            AboutStatus = !AboutStatus;
+            if (!AboutStatus)
+            {
+                About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.OutBack);
+                AboutStatus = !AboutStatus;
+                CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.OutBack);
+                CaseStudyStatus = !CaseStudyStatus;
+            }
+            else if (AboutStatus)
+            {
+                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.OutBack);
+                AboutStatus = !AboutStatus;
+            }
         }
     }
 
