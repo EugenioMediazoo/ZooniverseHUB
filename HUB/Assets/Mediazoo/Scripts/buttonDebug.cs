@@ -11,11 +11,13 @@ public class buttonDebug : MonoBehaviour
     {
         selected = !selected;
         Invoke("changeBack", 1);
+        Debug.Log("Buttonswipe ready");
     }
 
     void changeBack()
     {
         selected = !selected;
+        Debug.Log("Button deselected");
     }
 
     public void ButtonDebugP()

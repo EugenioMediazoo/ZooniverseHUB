@@ -54,12 +54,12 @@ public class UIManagerScript : MonoBehaviour
     {
         if (!CaseStudyStatus)
         {
-            CaseStudy.transform.DOMoveY((screenHeight / 2f), time).SetEase(Ease.OutBack);
+            CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.OutBack);
             CaseStudyStatus = !CaseStudyStatus;
         }
         else if (CaseStudyStatus)
         {
-            CaseStudy.transform.DOMoveY(((screenHeight / 2f) * -1), time).SetEase(Ease.OutBack);
+            CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.OutBack);
             CaseStudyStatus = !CaseStudyStatus;
         }
     }
@@ -68,12 +68,12 @@ public class UIManagerScript : MonoBehaviour
     {
         if (!AboutStatus)
         {
-            About.transform.DOMoveY((screenHeight / 2f), time).SetEase(Ease.OutBack);
+            About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.OutBack);
             AboutStatus = !AboutStatus;
         }
         else if (AboutStatus)
         {
-            About.transform.DOMoveY(((screenHeight / 2f) * -1), time).SetEase(Ease.OutBack);
+            About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.OutBack);
             AboutStatus = !AboutStatus;
         }
     }
