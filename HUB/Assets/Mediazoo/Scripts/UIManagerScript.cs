@@ -61,39 +61,42 @@ public class UIManagerScript : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        ratio = Screen.height / Screen.width;
-        Debug.Log(ratio + "," + Screen.width + "," + Screen.height);
+    #region START
+    //void Start()
+    //{
+    //    ratio = Screen.height / Screen.width;
+    //    Debug.Log(ratio + "," + Screen.width + "," + Screen.height);
 
-        if (ratio >= .9f && ratio <= 1.99f)
-        {
-            Debug.Log("9:16");
-            
-            ContainerRatio.anchoredPosition = new Vector2(0, 200f);
-            Debug.Log(ContainerRatio.anchoredPosition);
-        }
-        else if (ratio >= 2f && ratio <= 2.09f)
-        {
-            Debug.Log("9:18");
-            Debug.Log(ContainerRatio.anchoredPosition);
+    //    if (ratio >= .9f && ratio <= 1.99f)
+    //    {
+    //        Debug.Log("9:16");
 
-        }
-        else /*if (ratio >= 2.11f)*/
-        {
-            Debug.Log("9:19.5");
-            
-            ContainerRatio.anchoredPosition = new Vector2(0, -200f);
-            Debug.Log(ContainerRatio.anchoredPosition);
-        }
-    }
+    //        ContainerRatio.anchoredPosition = new Vector2(0, 200f);
+    //        Debug.Log(ContainerRatio.anchoredPosition);
+    //    }
+    //    else if (ratio >= 2f && ratio <= 2.09f)
+    //    {
+    //        Debug.Log("9:18");
+    //        Debug.Log(ContainerRatio.anchoredPosition);
 
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("9:19.5");
+
+    //        ContainerRatio.anchoredPosition = new Vector2(0, -200f);
+    //        Debug.Log(ContainerRatio.anchoredPosition);
+    //    }
+    //}
+    #endregion
+
+    #region UPDATE
     //private void Update()
     //{
     //    Debug.Log(Screen.height + "," + Screen.width);
     //    Debug.Log(ratio);
     //}
+    #endregion
 
     public void CaseStudySlider()
     {
@@ -213,9 +216,9 @@ public class UIManagerScript : MonoBehaviour
                 //SceneManager.LoadScene("AR", LoadSceneMode.Single);
                 Debug.Log(_button.tag);
             }
+            else
+                Debug.Log("currentSelectedGameObject is untagged");
         }
-        else
-            Debug.Log("currentSelectedGameObject is untagged");
     }
 
 }
