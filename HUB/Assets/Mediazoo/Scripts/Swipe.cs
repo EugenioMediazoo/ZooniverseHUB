@@ -14,7 +14,6 @@ public class Swipe : MonoBehaviour
     public GameObject SlideCaseStudyBG; 
     public GameObject SlideAboutBG;
 
-
     //scripts
     UIManagerScript ManagerUI;
 
@@ -87,9 +86,11 @@ public class Swipe : MonoBehaviour
     void Swipeing()
     {
         Vector2 distance = endPos - startPos;
+        
+        #region HORIZONTAL SWIPE
         if (Mathf.Abs(distance.x) > Mathf.Abs(distance.y))
         {
-            Debug.Log("horizontal Swipe");
+            //Debug.Log("horizontal Swipe");
 
             if (distance.x > 0)
             {
@@ -100,20 +101,21 @@ public class Swipe : MonoBehaviour
                 Debug.Log("Left Swipe");
             }
         }
+        #endregion
+        #region VERTICAL SWIPE
         else if (Mathf.Abs(distance.x) < Mathf.Abs(distance.y))
         {
-            Debug.Log("vertical Swipe");
-
             if (distance.y > 0)
             {
-                Debug.Log("Up Swipe");
+                //Debug.Log("Up Swipe");
 
                 if (CaseStudySwipeDetected != null)
                 {
                     if (CaseStudySwipeDetected.GetComponent<buttonDebug>().selected)
                     {
-                        Debug.Log("readytoSwipe");
-                        SlideCaseStudyBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
+                        ManagerUI.CaseStudySlider();
+                        //Debug.Log("readytoSwipe");
+                        //SlideCaseStudyBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
                     }
                 }
 
@@ -121,22 +123,23 @@ public class Swipe : MonoBehaviour
                 {
                     if (AboutSwipeDetected.GetComponent<buttonDebug>().selected)
                     {
-                        Debug.Log("readytoSwipe");
-                        SlideAboutBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
+                        ManagerUI.AboutSlider();
+                        //Debug.Log("readytoSwipe");
+                        //SlideAboutBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
                     }
                 }
-
             }
             else if (distance.y < 0)
             {
-                Debug.Log("Down Swipe");
+                //Debug.Log("Down Swipe");
                 
                 if (CaseStudySwipeDetected != null)
                 {
                     if(CaseStudySwipeDetected.GetComponent<buttonDebug>().selected)
                     {
-                        Debug.Log("readytoSwipe");
-                        SlideCaseStudyBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
+                        ManagerUI.CaseStudySlider();
+                        //Debug.Log("readytoSwipe");
+                        //SlideCaseStudyBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
                     }
                 }
 
@@ -144,12 +147,13 @@ public class Swipe : MonoBehaviour
                 {
                     if (AboutSwipeDetected.GetComponent<buttonDebug>().selected)
                     {
-                        Debug.Log("readytoSwipe");
-                        SlideAboutBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
+                        ManagerUI.AboutSlider();
+                        //Debug.Log("readytoSwipe");
+                        //SlideAboutBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
                     }
                 }
-
             }
+            #endregion
         }
     }
 }

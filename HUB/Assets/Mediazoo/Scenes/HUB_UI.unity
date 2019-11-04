@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 645184757}
   - component: {fileID: 645184756}
   m_Layer: 5
-  m_Name: Button
+  m_Name: AboutButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1316,7 +1316,7 @@ GameObject:
   - component: {fileID: 664529672}
   - component: {fileID: 664529671}
   m_Layer: 5
-  m_Name: Arrow
+  m_Name: AboutArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1870,6 +1870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CaseStudy: {fileID: 591711509}
   About: {fileID: 1606988687}
+  CaseStudyArrow: {fileID: 1728490896}
+  AboutArrow: {fileID: 664529671}
   ContainerRatio: {fileID: 477709647}
   time: 0.7
 --- !u!4 &1110694650
@@ -2654,7 +2656,7 @@ GameObject:
   - component: {fileID: 1728490897}
   - component: {fileID: 1728490896}
   m_Layer: 5
-  m_Name: Arrow
+  m_Name: CaseStudyArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3245,7 +3247,7 @@ GameObject:
   - component: {fileID: 2022423793}
   - component: {fileID: 2022423792}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CaseStudyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
