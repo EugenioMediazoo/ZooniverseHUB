@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class UIManagerScript : MonoBehaviour
@@ -213,7 +213,7 @@ public class UIManagerScript : MonoBehaviour
         {
             if (_button.CompareTag("Zooniverse"))
             {
-                //SceneManager.LoadScene("AR", LoadSceneMode.Single);
+                SceneManager.LoadScene("ZooniverseAR", LoadSceneMode.Single);
                 Debug.Log(_button.tag);
             }
             else
