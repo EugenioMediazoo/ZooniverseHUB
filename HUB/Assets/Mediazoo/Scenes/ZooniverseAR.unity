@@ -526,7 +526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &162095726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,7 +626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &189976937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11267,6 +11267,7 @@ GameObject:
   - component: {fileID: 1868250898}
   - component: {fileID: 1868250897}
   - component: {fileID: 1868250896}
+  - component: {fileID: 1868250901}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: MainCamera
@@ -11365,6 +11366,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1868250901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868250895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b8afeaeca35b54d984b1525b2fb82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  islands: {fileID: 1756478794}
+  lioness: {fileID: 1296147524}
+  gorilla: {fileID: 528871750}
 --- !u!1 &1905090978
 GameObject:
   m_ObjectHideFlags: 0
@@ -11450,6 +11466,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: animal islands
       objectReference: {fileID: 0}
+    - target: {fileID: -5593578119740977394, guid: ab13cae178ca4c64b8ad9ed188dfe126,
+        type: 3}
+      propertyPath: m_TagString
+      value: gorilla
+      objectReference: {fileID: 0}
+    - target: {fileID: -117912632853259938, guid: ab13cae178ca4c64b8ad9ed188dfe126,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -117912632853259938, guid: ab13cae178ca4c64b8ad9ed188dfe126,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -117912632853259938, guid: ab13cae178ca4c64b8ad9ed188dfe126,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8106690559501484049, guid: ab13cae178ca4c64b8ad9ed188dfe126,
+        type: 3}
+      propertyPath: m_TagString
+      value: lioness
+      objectReference: {fileID: 0}
+    - target: {fileID: -1647070690255034327, guid: ab13cae178ca4c64b8ad9ed188dfe126,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1647070690255034327, guid: ab13cae178ca4c64b8ad9ed188dfe126,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1647070690255034327, guid: ab13cae178ca4c64b8ad9ed188dfe126,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ab13cae178ca4c64b8ad9ed188dfe126,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11525,36 +11581,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 532185a7eb0cf7146a2bc27e094c5903, type: 2}
-    - target: {fileID: -117912632853259938, guid: ab13cae178ca4c64b8ad9ed188dfe126,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -117912632853259938, guid: ab13cae178ca4c64b8ad9ed188dfe126,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -117912632853259938, guid: ab13cae178ca4c64b8ad9ed188dfe126,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -1647070690255034327, guid: ab13cae178ca4c64b8ad9ed188dfe126,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -1647070690255034327, guid: ab13cae178ca4c64b8ad9ed188dfe126,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -1647070690255034327, guid: ab13cae178ca4c64b8ad9ed188dfe126,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8094442127230843945, guid: ab13cae178ca4c64b8ad9ed188dfe126,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

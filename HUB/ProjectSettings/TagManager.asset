@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Zooniverse
+  - gorilla
+  - lioness
   layers:
   - Default
   - TransparentFX
