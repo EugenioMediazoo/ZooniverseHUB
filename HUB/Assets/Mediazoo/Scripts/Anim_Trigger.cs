@@ -9,6 +9,7 @@ public class Anim_Trigger : MonoBehaviour, ITrackableEventHandler
 
     private TrackableBehaviour mTrackableBehaviour;
     public GameObject animal_islands;
+    public GameObject london_island;
 
     void Start()
     {
@@ -22,18 +23,22 @@ public class Anim_Trigger : MonoBehaviour, ITrackableEventHandler
     public void OnTrackableStateChanged(
                                     TrackableBehaviour.Status previousStatus,
                                     TrackableBehaviour.Status newStatus)
+
     {
+
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
 
             animal_islands.SetActive(true);
+           // london_island.SetActive(true);
 
         }
         else
         {
             animal_islands.SetActive(false);
+            london_island.SetActive(false);
 
         }
     }

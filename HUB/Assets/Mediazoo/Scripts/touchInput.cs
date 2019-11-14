@@ -7,13 +7,14 @@ public class touchInput : MonoBehaviour
 
 {
     public GameObject islands;
-    //public GameObject london;
+    public GameObject london;
 
     public GameObject lioness;
+    public GameObject phonebox;
     public GameObject gorilla;
     public GameObject canvas_Lioness;
     public GameObject canvas_Gorilla;
-
+    public GameObject film;
 
     public ParticleSystem lioness_Particles;
     public ParticleSystem gorilla_Particles;
@@ -21,15 +22,17 @@ public class touchInput : MonoBehaviour
 
     private bool lioness_tapped;
     private bool gorilla_tapped;
+    private bool phonebox_tapped;
 
     private void Start()
     {
         lioness_tapped = false;
+        film.SetActive(false);
+        phonebox_tapped = false;
         gorilla_tapped = false;
         canvas_Lioness.SetActive(false);
         canvas_Gorilla.SetActive(false);
-
-        //london.SetActive(false);
+        london.SetActive(false);
     }
 
     void Update()
@@ -52,18 +55,26 @@ public class touchInput : MonoBehaviour
                     lioness_tapped = true;
                 }
 
-                if (raycastHit.collider.CompareTag("gorilla"))
+                else if (raycastHit.collider.CompareTag("gorilla"))
                 {
                     Debug.Log("Gorilla tapped");
                     gorilla_Particles.Stop();
                     canvas_Gorilla.SetActive(true);
                     gorilla_tapped = true;
                 }
+
+                else if (raycastHit.collider.CompareTag("phonebox"))
+                {
+                    Debug.Log("Phonebox tapped");
+                    //gorilla_Particles.Stop();
+                    film.SetActive(true);
+                    phonebox_tapped = true;
+                }
             }
 
             if (gorilla_tapped && lioness_tapped)
             {
-                //london.SetActive(true);
+                london.SetActive(true);
 
             }
         }
