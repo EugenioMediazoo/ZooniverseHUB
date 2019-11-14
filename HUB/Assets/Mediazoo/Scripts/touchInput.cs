@@ -11,15 +11,24 @@ public class touchInput : MonoBehaviour
 
     public GameObject lioness;
     public GameObject gorilla;
+    public GameObject canvas_Lioness;
+    public GameObject canvas_Gorilla;
+
+
+    public ParticleSystem lioness_Particles;
+    public ParticleSystem gorilla_Particles;
+
 
     private bool lioness_tapped;
     private bool gorilla_tapped;
 
     private void Start()
     {
-        lioness.SetActive(true);
         lioness_tapped = false;
         gorilla_tapped = false;
+        canvas_Lioness.SetActive(false);
+        canvas_Gorilla.SetActive(false);
+
         //london.SetActive(false);
     }
 
@@ -38,14 +47,16 @@ public class touchInput : MonoBehaviour
                 if (raycastHit.collider.CompareTag("lioness"))
                 {
                     Debug.Log("tapped");
-                    lioness.SetActive(false);
+                    lioness_Particles.Stop();
+                    canvas_Lioness.SetActive(true);
                     lioness_tapped = true;
                 }
 
                 if (raycastHit.collider.CompareTag("gorilla"))
                 {
                     Debug.Log("Gorilla tapped");
-                    gorilla.SetActive(false);
+                    gorilla_Particles.Stop();
+                    canvas_Gorilla.SetActive(true);
                     gorilla_tapped = true;
                 }
             }
