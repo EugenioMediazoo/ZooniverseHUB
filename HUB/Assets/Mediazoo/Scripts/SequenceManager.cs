@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 public class SequenceManager : MonoBehaviour
 {
     //questions array
     private GameObject[] Questions;
     private GameObject[] Sliders;
+    public GameObject[] TMs;
 
     //slider child
     //private GameObject slider;
@@ -22,9 +25,10 @@ public class SequenceManager : MonoBehaviour
 
 
     //slider
-    private Slider sliderValue;
-    private float newValue;
-    private float lastValue;
+    //private Slider sliders;
+    //private TextMeshProUGUI TMS;
+    private float newSliderValue;
+    //private float lastValue;
 
     void Awake()
     {
@@ -34,11 +38,19 @@ public class SequenceManager : MonoBehaviour
         Sliders = GameObject.FindGameObjectsWithTag("Slider");
         _i = 0;
 
-        foreach (GameObject slider in Sliders)
-        {
-            sliderValue = slider.GetComponent<Slider>();
-            //Debug.Log(sliderValue.name + ";" + sliderValue.value);
-        }
+        TMs = GameObject.FindGameObjectsWithTag("TM");
+        //slider = this.GetComponent<Slider>();
+
+        //foreach (GameObject slider in Sliders)
+        //{
+        //    sliders = slider.GetComponent<Slider>();
+        //    //Debug.Log(sliderValue.name + ";" + sliderValue.value);
+        //}
+
+        //foreach (GameObject TM in TMs)
+        //{
+        //    TMS = TM.GetComponent<TextMeshProUGUI>();
+        //}
 
         foreach (GameObject question in Questions)
         {
@@ -52,9 +64,14 @@ public class SequenceManager : MonoBehaviour
 
     public void OnValueChanged()
     {
-        newValue = Sliders[_i].GetComponent<Slider>().value;
-        lastValue = newValue;
-        Debug.Log(Sliders[_i].GetComponent<Slider>().value +";"+ Sliders[_i].name);
+        newSliderValue = Sliders[_i].GetComponent<Slider>().value;
+        Debug.Log(newSliderValue);
+        //lastValue = newValue;
+        //Debug.Log(Sliders[_i].GetComponent<Slider>().value +";"+ Sliders[_i].name);
+
+        //sliderValue = slider.value;
+        TMs[_i].GetComponent<TextMeshProUGUI>().SetText("{0}", newSliderValue);
+        //TMS.SetText("{0}", newSliderValue);
     }
 
     public void ActivateNext()
@@ -67,14 +84,22 @@ public class SequenceManager : MonoBehaviour
             if (Questions[i] == Questions[I])
             {
                 Questions[I].SetActive(true);
+
+                Questions[I].transform.DORotate(new Vector3(0, 0, 0), 1.5f, RotateMode.Fast).SetEase(Ease.InOutCubic);
                 continue;
             }
 
-            Questions[i].SetActive(false);
+            Questions[i].transform.DORotate(new Vector3(0, 0, 30), 1.5f, RotateMode.Fast).SetEase(Ease.InOutCubic);
+            //Questions[i].SetActive(false);
         }
-
+        Invoke("DeactivateUsed", 2.0f);
         _i++;
         //Debug.Log("_i value" + _i);
+    }
+
+    void DeactivateUsed()
+    {
+        Questions[i].SetActive(false);
     }
 
 }

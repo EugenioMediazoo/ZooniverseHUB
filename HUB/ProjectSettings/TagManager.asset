@@ -7,6 +7,7 @@ TagManager:
   - Zooniverse
   - Question
   - Slider
+  - TM
   layers:
   - Default
   - TransparentFX
