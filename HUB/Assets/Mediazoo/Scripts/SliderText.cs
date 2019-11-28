@@ -4,13 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[RequireComponent(typeof(Button))]
 public class SliderText : MonoBehaviour
 {
+    //text
     public TextMeshProUGUI TM;
+
+    //button
     public Button button;
-    private Sprite buttonSprite;
+    private Image myButton;
+    
+    //sprite
     public Sprite ActiveButton;
 
+    //slider
     private Slider slider;
     private float sliderValue;
 
@@ -18,13 +25,18 @@ public class SliderText : MonoBehaviour
     {
         slider = this.GetComponent<Slider>();
         TM = TM.GetComponent<TextMeshProUGUI>();
-        buttonSprite = button.GetComponent<Image>().sprite;
+        myButton = button.GetComponent<Button>().image;
     }
 
     public void updateText()
     {
         sliderValue = slider.value;
-        TM.SetText("{0}", slider.value);
-        buttonSprite = ActiveButton;
+        TM.SetText("{0}", sliderValue);
+
+        if (myButton.sprite.name != "ButtonActive")
+        {
+            myButton.sprite = ActiveButton;
+        }
     }
+
 }

@@ -8,6 +8,8 @@ TagManager:
   - Question
   - Slider
   - TM
+  - _slider
+  - _button
   layers:
   - Default
   - TransparentFX

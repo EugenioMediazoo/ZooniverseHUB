@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 8302340}
   - component: {fileID: 8302341}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Advancement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1632,6 +1632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 1388082678}
   PreviousCardPivot: {fileID: 172900632}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!114 &245230786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1967,7 +1969,7 @@ GameObject:
   - component: {fileID: 317226587}
   m_Layer: 5
   m_Name: Slider1
-  m_TagString: Slider
+  m_TagString: _slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4509,6 +4511,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 0}
   PreviousCardPivot: {fileID: 482446731}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!114 &638866930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7869,6 +7873,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 2050078082}
   PreviousCardPivot: {fileID: 1388082678}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!114 &902762408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8778,7 +8784,7 @@ GameObject:
   - component: {fileID: 994243684}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: _button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8907,6 +8913,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 681938572}
   PreviousCardPivot: {fileID: 614930937}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!1 &1045093245
 GameObject:
   m_ObjectHideFlags: 0
@@ -9845,6 +9853,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 321869617}
   PreviousCardPivot: {fileID: 723341622}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!114 &1139873649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10370,6 +10380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 674089516}
   PreviousCardPivot: {fileID: 362369189}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!114 &1242157629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10623,6 +10635,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 172900632}
   PreviousCardPivot: {fileID: 321869617}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!114 &1268626015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12962,6 +12976,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 482446731}
   PreviousCardPivot: {fileID: 674089516}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!114 &1597170203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15432,6 +15448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 723341622}
   PreviousCardPivot: {fileID: 681938572}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!114 &1883228172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15956,6 +15974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextCardPivot: {fileID: 362369189}
   PreviousCardPivot: {fileID: 2050078082}
+  TMAdvancement: {fileID: 1780911920}
+  Advancement: {fileID: 8302341}
 --- !u!114 &1938201213
 MonoBehaviour:
   m_ObjectHideFlags: 0
