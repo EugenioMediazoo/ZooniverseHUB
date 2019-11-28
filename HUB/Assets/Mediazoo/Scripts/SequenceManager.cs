@@ -41,11 +41,11 @@ public class SequenceManager : MonoBehaviour
         TMs = GameObject.FindGameObjectsWithTag("TM");
         //slider = this.GetComponent<Slider>();
 
-        //foreach (GameObject slider in Sliders)
-        //{
-        //    sliders = slider.GetComponent<Slider>();
-        //    //Debug.Log(sliderValue.name + ";" + sliderValue.value);
-        //}
+        foreach (GameObject slider in Sliders)
+        {
+            //sliders = slider.GetComponent<Slider>();
+            //Debug.Log(sliderValue.name + ";" + sliderValue.value);
+        }
 
         //foreach (GameObject TM in TMs)
         //{
