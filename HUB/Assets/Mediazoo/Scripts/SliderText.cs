@@ -12,7 +12,8 @@ public class SliderText : MonoBehaviour
 
     //button
     public Button button;
-    private Image myButton;
+    private Button myButton;
+    private Image buttonSprite;
     
     //sprite
     public Sprite ActiveButton;
@@ -25,7 +26,10 @@ public class SliderText : MonoBehaviour
     {
         slider = this.GetComponent<Slider>();
         TM = TM.GetComponent<TextMeshProUGUI>();
-        myButton = button.GetComponent<Button>().image;
+        buttonSprite = button.GetComponent<Button>().image;
+        myButton = button.GetComponent<Button>();
+        
+        myButton.enabled = false;
     }
 
     public void updateText()
@@ -33,9 +37,10 @@ public class SliderText : MonoBehaviour
         sliderValue = slider.value;
         TM.SetText("{0}", sliderValue);
 
-        if (myButton.sprite.name != "ButtonActive")
+        if (buttonSprite.sprite.name != "ButtonActive")
         {
-            myButton.sprite = ActiveButton;
+            buttonSprite.sprite = ActiveButton;
+            myButton.enabled = true;
         }
     }
 

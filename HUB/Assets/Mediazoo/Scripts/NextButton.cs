@@ -17,10 +17,14 @@ public class NextButton : MonoBehaviour
     //Advancement
     public Slider Advancement;
 
+    //animation
+    [Range(0.1f, 5)]
+    public float animationSpeed = 1;
+
     public void NextCard()
     {
-        NextCardPivot.transform.DORotate(new Vector3(0, 0, 0), 1, RotateMode.Fast).SetEase(Ease.InOutCubic);
-        PreviousCardPivot.transform.DORotate(new Vector3(0, 0, 25), 1, RotateMode.Fast).SetEase(Ease.InOutCubic);
+        NextCardPivot.transform.DORotate(new Vector3(0, 0, 0), animationSpeed, RotateMode.Fast).SetEase(Ease.InOutCubic);
+        PreviousCardPivot.transform.DORotate(new Vector3(0, 0, 25), animationSpeed, RotateMode.Fast).SetEase(Ease.InOutCubic);
 
         Advancement.value++;
         //TM = TMAdvancement.GetComponent<TextMeshProUGUI>();
