@@ -504,7 +504,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 40111086}
   m_TextComponent: {fileID: 870630234}
   m_materialReferenceIndex: 1
@@ -2110,7 +2110,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.4000244, y: 2106}
-  m_SizeDelta: {x: 857.2, y: 1021.8}
+  m_SizeDelta: {x: 860, y: 860}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &184163886
 MonoBehaviour:
@@ -2130,7 +2130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6359510774e7b9e4d874df2398669556, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1042d73161437ae468d1a0023f163492, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5296,7 +5296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loyal
+  m_text: Keen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1641adc50f466714fa661c35ea5ed3fe, type: 2}
   m_sharedMaterial: {fileID: -2540894326864252059, guid: 1641adc50f466714fa661c35ea5ed3fe,
@@ -5366,7 +5366,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 361957437}
-    characterCount: 5
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -6444,7 +6444,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15 yy
+  m_text: <1 yy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1641adc50f466714fa661c35ea5ed3fe, type: 2}
   m_sharedMaterial: {fileID: -2540894326864252059, guid: 1641adc50f466714fa661c35ea5ed3fe,
@@ -6517,7 +6517,7 @@ MonoBehaviour:
     characterCount: 5
     spriteCount: 0
     spaceCount: 1
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -6583,7 +6583,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.4000244, y: 2106}
-  m_SizeDelta: {x: 857.2, y: 1021.8}
+  m_SizeDelta: {x: 860, y: 860}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445042862
 MonoBehaviour:
@@ -6603,7 +6603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6359510774e7b9e4d874df2398669556, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e4c0364a2eaded498316d2689428d65, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11326,7 +11326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loyal
+  m_text: Listener
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1641adc50f466714fa661c35ea5ed3fe, type: 2}
   m_sharedMaterial: {fileID: -2540894326864252059, guid: 1641adc50f466714fa661c35ea5ed3fe,
@@ -11396,7 +11396,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 732644010}
-    characterCount: 5
+    characterCount: 8
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -12589,7 +12589,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 363923807}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -14593,7 +14593,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951378340}
-  m_LocalRotation: {x: -0, y: -0, z: 0.13052642, w: -0.9914448}
+  m_LocalRotation: {x: 0, y: -0, z: 0.13052642, w: -0.9914448}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18852,7 +18852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15 yy
+  m_text: 4+ yy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1641adc50f466714fa661c35ea5ed3fe, type: 2}
   m_sharedMaterial: {fileID: -2540894326864252059, guid: 1641adc50f466714fa661c35ea5ed3fe,
@@ -24341,7 +24341,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.4000244, y: 2106}
-  m_SizeDelta: {x: 857.2, y: 1021.8}
+  m_SizeDelta: {x: 905.6, y: 978.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1739760890
 MonoBehaviour:
@@ -24361,7 +24361,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6359510774e7b9e4d874df2398669556, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0631ff3592e14ec478a2969f15ed1d28, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24519,7 +24519,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 40111085}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -24756,6 +24756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366ccd8f60d7ca54aac7273c4adb5f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalValue: 0
   Previous: {fileID: 482446731}
   Adcanvement: {fileID: 993544756}
   animationSpeed: 1
@@ -29303,7 +29304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loyal
+  m_text: Expert
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1641adc50f466714fa661c35ea5ed3fe, type: 2}
   m_sharedMaterial: {fileID: -2540894326864252059, guid: 1641adc50f466714fa661c35ea5ed3fe,
@@ -29373,7 +29374,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2140608780}
-    characterCount: 5
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
     wordCount: 1

@@ -8,7 +8,7 @@ public class ComparePerson : MonoBehaviour
 {
 
     private GameObject[] Sliders;
-    private float finalValue = 0;
+    public float finalValue = 0;
     public GameObject Previous;
     public GameObject Adcanvement;
 
