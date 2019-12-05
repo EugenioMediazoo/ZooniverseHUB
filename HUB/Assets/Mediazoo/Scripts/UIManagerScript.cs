@@ -24,11 +24,11 @@ public class UIManagerScript : MonoBehaviour
     //Heights
     private float screenHeight;
     private float screenWidth;
-    private double ratio;
+    private float _ratio;
 
     //bools
-    private bool CaseStudyStatus;
-    private bool AboutStatus;
+    public bool CaseStudyStatus;
+    public bool AboutStatus;
 
     private void Awake()
     {
@@ -37,17 +37,17 @@ public class UIManagerScript : MonoBehaviour
         CaseStudyStatus = false;
         AboutStatus = false;
 
-        double ratio = Screen.height / Screen.width;
-        Debug.Log(ratio + "," + Screen.width + "," + Screen.height);
+        _ratio = Screen.height / Screen.width;
+        Debug.Log(_ratio + "," + Screen.width + "," + Screen.height);
 
-        if (ratio >= .9f && ratio <= 1.99f)
+        if (_ratio >= .9f && _ratio <= 1.99f)
         {
             Debug.Log("9:16");
             
             ContainerRatio.anchoredPosition = new Vector2(0, 200f);
             Debug.Log(ContainerRatio.anchoredPosition);
         }
-        else if (ratio >= 2f && ratio <= 2.09f)
+        else if (_ratio >= 2f && _ratio <= 2.09f)
         {
             Debug.Log("9:18");
             Debug.Log(ContainerRatio.anchoredPosition);
@@ -100,7 +100,9 @@ public class UIManagerScript : MonoBehaviour
 
     public void CaseStudySlider()
     {
-        if (ratio <= 1.99f)
+        Debug.Log(_ratio);
+
+        if (_ratio <= 1.99f)
         {
             if (!CaseStudyStatus)
             {
@@ -119,13 +121,13 @@ public class UIManagerScript : MonoBehaviour
                 CaseStudy.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.OutBack);
                 CaseStudyStatus = !CaseStudyStatus;
                 CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
-                
+
                 About.transform.DOMoveY(((screenHeight * 0.443f) * -1), time).SetEase(Ease.OutBack);
                 AboutStatus = !AboutStatus;
                 AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
             }
         }
-        else if (ratio >= 2f)
+        else if (_ratio >= 2f)
         {
             if (!CaseStudyStatus)
             {
@@ -133,7 +135,7 @@ public class UIManagerScript : MonoBehaviour
                 CaseStudyStatus = !CaseStudyStatus;
                 CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.LocalAxisAdd).SetEase(Ease.OutBack);
             }
-            else if (CaseStudyStatus && AboutStatus)
+            else if (CaseStudyStatus && !AboutStatus)
             {
                 CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.OutBack);
                 CaseStudyStatus = !CaseStudyStatus;
@@ -154,7 +156,7 @@ public class UIManagerScript : MonoBehaviour
 
     public void AboutSlider()
     {
-        if (ratio <= 1.99f)
+        if (_ratio <= 1.99f)
         {
             if (!AboutStatus && !CaseStudyStatus)
             {
@@ -179,9 +181,21 @@ public class UIManagerScript : MonoBehaviour
                 AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
             }
         }
-        else if (ratio >= 2f)
+        else if (_ratio >= 2f)
         {
-            if (!AboutStatus && !CaseStudyStatus)
+            if (AboutStatus)
+            {
+                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.OutBack);
+                AboutStatus = !AboutStatus;
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+            }
+            else if (!AboutStatus && CaseStudyStatus)
+            {
+                About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.OutBack);
+                AboutStatus = !AboutStatus;
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+            }
+            else if (!AboutStatus && !CaseStudyStatus)
             {
                 About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.OutBack);
                 AboutStatus = !AboutStatus;
@@ -190,18 +204,6 @@ public class UIManagerScript : MonoBehaviour
                 CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.OutBack);
                 CaseStudyStatus = !CaseStudyStatus;
                 CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
-            }
-            if (!AboutStatus && CaseStudyStatus)
-            {
-                About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.OutBack);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
-            }
-            else if (AboutStatus)
-            {
-                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.OutBack);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
             }
         }
     }
