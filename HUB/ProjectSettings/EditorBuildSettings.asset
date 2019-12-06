@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Zooniverse_AR.unity
-    guid: df3e44807f3a27c4a864d04a436bf7a1
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Mediazoo/Scenes/HUB_UI.unity
     guid: 81a97e99d4022a9459412477ff23c7f0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Mediazoo/Scenes/ZooniverseAR.unity
     guid: 4397fa3b6eace5e44a853f2f89937014
+  - enabled: 1
+    path: Assets/Mediazoo/Scenes/ZooniverseARFoundation.unity
+    guid: d1f382c734ddc0841ac55e8d867517c8
   m_configObjects: {}
