@@ -708,7 +708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &504934803
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1246,17 +1246,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1636290293}
-        m_MethodName: ButtonDebugP
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1110694649}
         m_MethodName: AboutSlider
         m_Mode: 1
@@ -1849,10 +1838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1da23879fc92e443a6b0844c0ebaf46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CaseStudySwipeDetected: {fileID: 1987817620}
-  AboutSwipeDetected: {fileID: 504934805}
-  SlideCaseStudyBG: {fileID: 591711507}
-  SlideAboutBG: {fileID: 1606988685}
+  ManagerUI: {fileID: 1110694649}
   minTime: 0.2
   maxTime: 1
   minSwipeDist: 50
@@ -3034,13 +3020,14 @@ GameObject:
   - component: {fileID: 1987817621}
   - component: {fileID: 1987817620}
   - component: {fileID: 1987817623}
+  - component: {fileID: 1987817624}
   m_Layer: 5
   m_Name: CaseStudySwipeDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1987817619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3082,7 +3069,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3103,7 +3090,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1987817623}
+      - m_Target: {fileID: 1987817624}
         m_MethodName: changeBool
         m_Mode: 1
         m_Arguments:
@@ -3127,7 +3114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.5647059}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3160,6 +3147,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a06c80e75110ed6479dcc492b8d56c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
+--- !u!114 &1987817624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987817618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e565c5a60fa674686249781004df90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
@@ -3318,17 +3318,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1636290293}
-        m_MethodName: ButtonDebugP
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1110694649}
         m_MethodName: CaseStudySlider
         m_Mode: 1
