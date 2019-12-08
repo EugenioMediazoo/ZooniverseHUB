@@ -1874,6 +1874,8 @@ MonoBehaviour:
   AboutArrow: {fileID: 664529671}
   ContainerRatio: {fileID: 477709647}
   time: 0.9
+  CaseStudyStatus: 0
+  AboutStatus: 0
 --- !u!4 &1110694650
 Transform:
   m_ObjectHideFlags: 0
