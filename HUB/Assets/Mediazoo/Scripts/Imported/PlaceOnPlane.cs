@@ -34,6 +34,7 @@ public class PlaceOnPlane : MonoBehaviour
     void Awake()
     {
         m_RaycastManager = GetComponent<ARRaycastManager>();
+        m_PlacedPrefab.SetActive(false);
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
@@ -70,7 +71,10 @@ public class PlaceOnPlane : MonoBehaviour
 
             if (spawnedObject == null)
             {
-                spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                //spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                m_PlacedPrefab.SetActive(true);
+                m_PlacedPrefab.transform.position = hitPose.position;
+                m_PlacedPrefab.transform.rotation = hitPose.rotation;
             }
             else
             {
