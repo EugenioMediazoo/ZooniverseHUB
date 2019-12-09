@@ -8,9 +8,6 @@ using UnityEngine.UI;
 
 public class UIManagerScript : MonoBehaviour
 {
-    //public scenes
-    public string ZooniverseAR;
-
     //Images and gameObjects
     public Image CaseStudy;
     public Image About;
@@ -210,22 +207,5 @@ public class UIManagerScript : MonoBehaviour
             }
         }
     }
-
-    public void SceneLauncher()
-    {
-        GameObject _button = EventSystem.current.currentSelectedGameObject;
-        if (_button != null)
-        {
-            if (_button.CompareTag("Zooniverse"))
-            {
-                SceneManager.LoadScene(ZooniverseAR, LoadSceneMode.Single);
-                Debug.Log(_button.tag);
-            }
-            else
-                Debug.Log("currentSelectedGameObject is untagged");
-        }
-    }
-
-
 
 }

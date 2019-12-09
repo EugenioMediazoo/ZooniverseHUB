@@ -2107,8 +2107,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1110694649}
-        m_MethodName: SceneLauncher
+      - m_Target: {fileID: 1110694651}
+        m_MethodName: LaunchSceene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2542,7 +2542,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 266815831}
   m_HandleRect: {fileID: 266815830}
   m_Direction: 2
-  m_Value: 1.0000091
+  m_Value: 1.0007596
   m_Size: 0.98791957
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3021,7 +3021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.020263672}
   m_SizeDelta: {x: 2471.3, y: 2235}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1026404055
@@ -3175,8 +3175,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1110694649}
-        m_MethodName: SceneLauncher
+      - m_Target: {fileID: 1110694651}
+        m_MethodName: LaunchSceene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3233,6 +3233,7 @@ GameObject:
   - component: {fileID: 1110694650}
   - component: {fileID: 1110694649}
   - component: {fileID: 1110694648}
+  - component: {fileID: 1110694651}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -3268,7 +3269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d3b33c2b45d68488cd02ff37bf59d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZooniverseAR: ZooniverseARFoundation
   CaseStudy: {fileID: 591711509}
   About: {fileID: 1606988687}
   CaseStudyArrow: {fileID: 1728490896}
@@ -3291,6 +3291,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1110694651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110694647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9d7800bcfe43b4ea7c6ff32d3e1a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZooniverseAR: ZooniverseARFoundation
+  Hub: HUB_UI
 --- !u!1 &1190377649
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,8 +3771,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1110694649}
-        m_MethodName: SceneLauncher
+      - m_Target: {fileID: 1110694651}
+        m_MethodName: LaunchSceene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
