@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Mediazoo/Scenes/HUB_UI.unity
     guid: 81a97e99d4022a9459412477ff23c7f0
   - enabled: 0

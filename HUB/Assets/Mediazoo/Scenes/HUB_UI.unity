@@ -530,7 +530,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1110694649}
-        m_MethodName: ZooninverseScene
+        m_MethodName: SceneLauncher
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1854,6 +1854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d3b33c2b45d68488cd02ff37bf59d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZooniverseAR: ZooniverseARFoundation
   CaseStudy: {fileID: 591711509}
   About: {fileID: 1606988687}
   CaseStudyArrow: {fileID: 1728490896}
