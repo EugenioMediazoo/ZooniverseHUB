@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 
-public class touchInput : MonoBehaviour
+
+public class RaycastUIManager : MonoBehaviour
 
 {
     //public GameObject london;
 
-    public GameObject lioness;
-    public GameObject gorilla;
-    public GameObject canvas_Lioness;
-    public GameObject canvas_Gorilla;
+    public GameObject LionessGameObject;
+    public GameObject GorillaGameObject;
+    public GameObject LionessUI;
+    public GameObject GorillaUI;
 
 
     public ParticleSystem lioness_Particles;
@@ -20,12 +22,12 @@ public class touchInput : MonoBehaviour
     private bool lioness_tapped;
     private bool gorilla_tapped;
 
-    private void Start()
+    private void Awake()
     {
         lioness_tapped = false;
         gorilla_tapped = false;
-        canvas_Lioness.SetActive(false);
-        canvas_Gorilla.SetActive(false);
+        LionessUI.SetActive(false);
+        GorillaUI.SetActive(false);
 
         //london.SetActive(false);
     }
@@ -36,7 +38,6 @@ public class touchInput : MonoBehaviour
         {
             Debug.Log("running");
 
-
             Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit raycastHit;
             if (Physics.Raycast(raycast, out raycastHit))
@@ -46,7 +47,7 @@ public class touchInput : MonoBehaviour
                 {
                     Debug.Log("tapped");
                     lioness_Particles.Stop();
-                    canvas_Lioness.SetActive(true);
+                    LionessUI.SetActive(true);
                     lioness_tapped = true;
                 }
 
@@ -54,7 +55,7 @@ public class touchInput : MonoBehaviour
                 {
                     Debug.Log("Gorilla tapped");
                     gorilla_Particles.Stop();
-                    canvas_Gorilla.SetActive(true);
+                    GorillaUI.SetActive(true);
                     gorilla_tapped = true;
                 }
             }

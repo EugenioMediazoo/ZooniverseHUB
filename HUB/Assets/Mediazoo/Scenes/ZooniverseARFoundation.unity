@@ -726,6 +726,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99425083}
   m_CullTransparentMesh: 0
+--- !u!1 &260251389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 319618418948419936, guid: bb1dc20e8658d474caf8eed2da64e481,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003788585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &423369510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8814429676386511435, guid: bb1dc20e8658d474caf8eed2da64e481,
@@ -899,7 +905,7 @@ RectTransform:
   m_Children:
   - {fileID: 38731474}
   m_Father: {fileID: 1782817544}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -996,6 +1002,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568564198}
   m_CullTransparentMesh: 0
+--- !u!198 &581067586 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2975253489585610923, guid: bb1dc20e8658d474caf8eed2da64e481,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003788585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &829896716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1310,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7200186603096810531, guid: bb1dc20e8658d474caf8eed2da64e481,
+        type: 3}
+      propertyPath: m_TagString
+      value: lioness
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200186603096810531, guid: bb1dc20e8658d474caf8eed2da64e481,
+        type: 3}
+      propertyPath: m_Name
+      value: LionesseGameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 319618418948419936, guid: bb1dc20e8658d474caf8eed2da64e481,
+        type: 3}
+      propertyPath: m_TagString
+      value: gorilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 319618418948419936, guid: bb1dc20e8658d474caf8eed2da64e481,
+        type: 3}
+      propertyPath: m_Name
+      value: GorillaGameObject
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb1dc20e8658d474caf8eed2da64e481, type: 3}
 --- !u!1 &1017567735
@@ -1581,7 +1613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 980, y: 1075}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076616270
@@ -2352,7 +2384,7 @@ RectTransform:
   - {fileID: 1667168585}
   - {fileID: 829896717}
   m_Father: {fileID: 1782817544}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2407,7 +2439,7 @@ GameObject:
   - component: {fileID: 1522282104}
   - component: {fileID: 1522282103}
   m_Layer: 5
-  m_Name: LionesseUI
+  m_Name: LionessUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2427,7 +2459,7 @@ RectTransform:
   - {fileID: 2015422368}
   - {fileID: 1423129370}
   m_Father: {fileID: 1782817544}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2470,6 +2502,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522282101}
   m_CullTransparentMesh: 0
+--- !u!198 &1606631222 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5302457666103560772, guid: bb1dc20e8658d474caf8eed2da64e481,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003788585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1667168584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,6 +2585,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667168584}
   m_CullTransparentMesh: 0
+--- !u!1 &1682908317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7200186603096810531, guid: bb1dc20e8658d474caf8eed2da64e481,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003788585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1782817540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,9 +2682,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1151403217}
-  - {fileID: 568564199}
   - {fileID: 1522282102}
   - {fileID: 1452669417}
+  - {fileID: 568564199}
   - {fileID: 1017567736}
   - {fileID: 1040203857}
   m_Father: {fileID: 0}
@@ -2661,6 +2705,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1878891932}
   - component: {fileID: 1878891931}
+  - component: {fileID: 1878891933}
+  - component: {fileID: 1878891934}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -2696,6 +2742,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1878891933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878891930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b8afeaeca35b54d984b1525b2fb82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LionessGameObject: {fileID: 1682908317}
+  GorillaGameObject: {fileID: 260251389}
+  LionessUI: {fileID: 1522282101}
+  GorillaUI: {fileID: 1452669416}
+  lioness_Particles: {fileID: 1606631222}
+  gorilla_Particles: {fileID: 581067586}
+--- !u!114 &1878891934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878891930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98c6b1281997e746a5c24dc487ddfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  Arrows: {fileID: 1948983081}
+  Phone: {fileID: 1076616268}
+  Finger: {fileID: 2131046527}
+  AnimationSpeed: 3
+  distX: 15
+  distY: 5
 --- !u!1 &1946530251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,7 +3164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00024414062, y: 0.00024414062}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 980, y: 1075}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131046529
