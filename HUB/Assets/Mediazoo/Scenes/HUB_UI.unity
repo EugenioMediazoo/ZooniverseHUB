@@ -1693,7 +1693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1909}
+  m_AnchoredPosition: {x: 0, y: -1750}
   m_SizeDelta: {x: -408, y: 2235.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578067813
@@ -1714,10 +1714,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo commodo at
-    sed odio elementum, vulputate sagittis sed blandit. Velit posuere aliquet enim
-    in sed. Cursus varius facilisis vitae semper enim, metus bibendum consectetur
-    lacinia. Sit elit elementum rhoncus at commodo. Rutrum urna nec eu nunc. Non.
+  m_text: "Media Zoo is no ordinary agency. \r\n\r\nFounded in 2003 by the merging
+    of minds of a BBC Creative Director and a BBC Producer, the Zoo was created to
+    help clients communicate better with customers, colleagues and each other. We
+    now have over 100 people across five sites in London, Glasgow and Zurich. \r\n\r\nWith
+    our collection of unique skills within teams of TV producers, PR professionals
+    and Learning Consultants, we continue to solve our clients\u2019 business issues
+    with expert advice and award winning creativity across all genres and audience
+    sectors.\r\n\r\nExplore our Hub to see examples of our work.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9deac5ee7251c8b4d98f52feea29e1ee, type: 2}
   m_sharedMaterial: {fileID: 7428458469364382649, guid: 9deac5ee7251c8b4d98f52feea29e1ee,
@@ -1746,7 +1750,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 80
+  m_fontSize: 75.8
   m_fontSizeBase: 140
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1787,12 +1791,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 578067813}
-    characterCount: 306
+    characterCount: 600
     spriteCount: 0
-    spaceCount: 45
-    wordCount: 46
+    spaceCount: 103
+    wordCount: 98
     linkCount: 0
-    lineCount: 8
+    lineCount: 19
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2542,8 +2546,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 266815831}
   m_HandleRect: {fileID: 266815830}
   m_Direction: 2
-  m_Value: 1.0007596
-  m_Size: 0.98791957
+  m_Value: 2485995.2
+  m_Size: 0.98571426
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3021,7 +3025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.020263672}
+  m_AnchoredPosition: {x: 0, y: -79551830}
   m_SizeDelta: {x: 2471.3, y: 2235}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1026404055

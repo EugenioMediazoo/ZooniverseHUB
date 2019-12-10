@@ -31,10 +31,16 @@ public class PlaceOnPlane : MonoBehaviour
     /// </summary>
     public GameObject spawnedObject { get; private set; }
 
+    ARRaycastManager m_RaycastManager;
+    ARPlaneManager m_ARPlaneManager;
+
     void Awake()
     {
         m_RaycastManager = GetComponent<ARRaycastManager>();
         m_PlacedPrefab.SetActive(false);
+
+        m_ARPlaneManager = GetComponent<ARPlaneManager>();
+        SetAllPlanesActive(true);
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
@@ -75,6 +81,7 @@ public class PlaceOnPlane : MonoBehaviour
                 m_PlacedPrefab.SetActive(true);
                 m_PlacedPrefab.transform.position = hitPose.position;
                 m_PlacedPrefab.transform.rotation = hitPose.rotation;
+                SetAllPlanesActive(false);
             }
             else
             {
@@ -85,5 +92,9 @@ public class PlaceOnPlane : MonoBehaviour
 
     static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
-    ARRaycastManager m_RaycastManager;
+    void SetAllPlanesActive(bool value)
+    {
+        foreach (var plane in m_ARPlaneManager.trackables)
+            plane.gameObject.SetActive(value);
+    }
 }
