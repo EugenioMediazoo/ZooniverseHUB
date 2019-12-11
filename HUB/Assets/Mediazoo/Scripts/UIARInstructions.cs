@@ -38,7 +38,6 @@ public class UIARInstructions : MonoBehaviour
         //FingerImg = Finger.GetComponent<Image>().color;
         Grid.SetActive(false);
         Tap.SetActive(false);
-        TapToPlace.SetActive(false);
     }
 
     private void Update()
@@ -90,8 +89,8 @@ public class UIARInstructions : MonoBehaviour
         Finger.transform.DOLocalMoveX(0, AnimationSpeed/2).SetEase(Ease.InOutQuad);
         Finger.transform.DOLocalMoveY(0, AnimationSpeed/2).SetEase(Ease.InOutQuad);
 
-        TapToPlace.SetActive(true);
-        MoveSlowly.SetActive(false);
+        TapToPlace.transform.DOLocalMoveX(0, AnimationSpeed).SetEase(Ease.InOutQuad);
+        MoveSlowly.transform.DOLocalMoveX(2000, AnimationSpeed).SetEase(Ease.InOutQuad);
 
         TapFunction();
     }
