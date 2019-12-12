@@ -7,7 +7,7 @@ using DG.Tweening;
 public class UIARInstructions : MonoBehaviour
 {
     //debug
-    public bool debug;
+    public bool UI_OnOff;
 
     //Gameobjects
     public GameObject ARInstructions;
@@ -19,6 +19,8 @@ public class UIARInstructions : MonoBehaviour
 
     public GameObject MoveSlowly;
     public GameObject TapToPlace;
+
+    public PlaceOnPlane PlaceScript;
 
     //Variables
     [Range(0.1f,5)]
@@ -44,11 +46,11 @@ public class UIARInstructions : MonoBehaviour
     {
         //Debug.Log(FingerImg.a);
 
-        if (debug)
+        if (UI_OnOff)
         {
             ScanEnvironment();
             //HideArrows();
-            debug = !debug;
+            UI_OnOff = !UI_OnOff;
         }   
     }
 
@@ -121,6 +123,7 @@ public class UIARInstructions : MonoBehaviour
         ARInstructions.transform.DOLocalMoveY(((Screen.height*2)*-1), AnimationSpeed).SetEase(Ease.InCubic);
         yield return new WaitForSeconds(AnimationSpeed*2);
         ARInstructions.SetActive(false);
+        
+        PlaceScript.UI_Off = false;
     }
-
 }

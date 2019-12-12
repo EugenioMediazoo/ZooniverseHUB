@@ -1117,7 +1117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: 335.00006}
+  m_AnchoredPosition: {x: 175, y: 400}
   m_SizeDelta: {x: -350, y: 2225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &363730380
@@ -2546,8 +2546,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 266815831}
   m_HandleRect: {fileID: 266815830}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 1.0000091
+  m_Size: 0.98791957
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3025,7 +3025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -160}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2471.3, y: 2235}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1026404055
@@ -3258,6 +3258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManagerUI: {fileID: 1110694649}
+  RaycastUI: {fileID: 0}
   minTime: 0.2
   maxTime: 1
   minSwipeDist: 50

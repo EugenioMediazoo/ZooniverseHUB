@@ -33,6 +33,9 @@ public class PlaceOnPlane : MonoBehaviour
 
     ARRaycastManager m_RaycastManager;
     ARPlaneManager m_ARPlaneManager;
+    
+    [HideInInspector]
+    public bool UI_Off;
 
     void Awake()
     {
@@ -41,6 +44,8 @@ public class PlaceOnPlane : MonoBehaviour
 
         m_ARPlaneManager = GetComponent<ARPlaneManager>();
         SetAllPlanesActive(true);
+
+        UI_Off = true;
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
@@ -64,37 +69,60 @@ public class PlaceOnPlane : MonoBehaviour
         return false;
     }
 
+    public bool debug = false;
     void Update()
     {
+
+        if (debug)
+        {
+            Test();
+            debug = !debug;
+        }
+
         if (!TryGetTouchPosition(out Vector2 touchPosition))
             return;
 
-        if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
+        if (UI_Off == false) 
         {
-            // Raycast hits are sorted by distance, so the first one
-            // will be the closest hit.
-            var hitPose = s_Hits[0].pose;
-
-            if (spawnedObject == null)
+            if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
             {
-                //spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
-                m_PlacedPrefab.SetActive(true);
-                m_PlacedPrefab.transform.position = hitPose.position;
-                m_PlacedPrefab.transform.rotation = hitPose.rotation;
+                // Raycast hits are sorted by distance, so the first one
+                // will be the closest hit.
+                var hitPose = s_Hits[0].pose;
 
-                Debug.Log(m_PlacedPrefab.name);
-                Debug.Log(m_PlacedPrefab.transform.position);
-                Debug.Log(m_PlacedPrefab.transform.rotation);
-                //SetAllPlanesActive(false);
-            }
-            else
-            {
-                spawnedObject.transform.position = hitPose.position;
+                if (spawnedObject == null)
+                {
+                    //spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                    
+                    m_PlacedPrefab.SetActive(true);
+                    spawnedObject = m_PlacedPrefab;
+                    m_PlacedPrefab.transform.position = hitPose.position;
+                    m_PlacedPrefab.transform.rotation = hitPose.rotation;
+
+                    Debug.Log(m_PlacedPrefab.name);
+                    Debug.Log(m_PlacedPrefab.transform.position);
+                    Debug.Log(m_PlacedPrefab.transform.rotation);
+                    //SetAllPlanesActive(false);
+                }
+                else
+                {
+                    spawnedObject.transform.position = hitPose.position;
+                }
             }
         }
     }
 
-    static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
+    public void Test()
+    {
+        if (spawnedObject == null)
+        {
+            m_PlacedPrefab.SetActive(true);
+            Debug.Log(m_PlacedPrefab.name);
+        }
+    }
+    
+
+static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
     void SetAllPlanesActive(bool value)
     {

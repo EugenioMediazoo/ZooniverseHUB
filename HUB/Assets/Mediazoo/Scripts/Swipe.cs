@@ -180,13 +180,13 @@ public class Swipe : MonoBehaviour
                         ManagerUI.AboutSlider();
                     }
                 }
-                else if (startPos.y < buttonDividerHigh)
-                {
-                    if (ManagerUI != null)
+                
+                if (RaycastUI != null)
                     {
                         RaycastUI.UISlider();
+                        Debug.Log("SWipeDown");
                     }
-                }
+               
 
                 //if (CaseStudySwipeDetected != null)
                 //{
