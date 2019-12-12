@@ -16,6 +16,7 @@ public class Swipe : MonoBehaviour
 
     //scripts
     public UIManagerScript ManagerUI;
+    public RaycastUIManager RaycastUI;
 
     //swipe variables
     [Range(0.1f, 10f)]
@@ -38,7 +39,16 @@ public class Swipe : MonoBehaviour
 
     private void Awake()
     {
-        UIManagerScript ManagerUI = GetComponent<UIManagerScript>();
+        if(ManagerUI != null)
+        {
+            UIManagerScript ManagerUI = GetComponent<UIManagerScript>();
+        }
+
+        if (RaycastUI != null)
+        {
+            RaycastUIManager RaycastUI = GetComponent<RaycastUIManager>();
+        }
+
         buttonDividerLow = Screen.height / 8;
         buttonDividerHigh = (Screen.height / 8)*6;
     }
@@ -117,12 +127,19 @@ public class Swipe : MonoBehaviour
 
                 if (startPos.y > buttonDividerLow)
                 {
-                    ManagerUI.CaseStudySlider();
+                    if (ManagerUI != null)
+                    {
+                        ManagerUI.CaseStudySlider();
+                    }
                 }
                 else if(startPos.y < buttonDividerLow)
                 {
-                    ManagerUI.AboutSlider();
+                    if (ManagerUI != null)
+                    {
+                        ManagerUI.AboutSlider();
+                    }
                 }
+
 
                 //if (CaseStudySwipeDetected != null)
                 //{
@@ -150,11 +167,25 @@ public class Swipe : MonoBehaviour
 
                 if (startPos.y > buttonDividerHigh)
                 {
-                    ManagerUI.CaseStudySlider();
+                    if(ManagerUI != null)
+                    {
+                        ManagerUI.CaseStudySlider();
+                    }
+                        
                 }
                 else if (startPos.y < buttonDividerHigh)
                 {
-                    ManagerUI.AboutSlider();
+                    if (ManagerUI != null)
+                    {
+                        ManagerUI.AboutSlider();
+                    }
+                }
+                else if (startPos.y < buttonDividerHigh)
+                {
+                    if (ManagerUI != null)
+                    {
+                        RaycastUI.UISlider();
+                    }
                 }
 
                 //if (CaseStudySwipeDetected != null)

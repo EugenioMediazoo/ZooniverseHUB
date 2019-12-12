@@ -81,7 +81,11 @@ public class PlaceOnPlane : MonoBehaviour
                 m_PlacedPrefab.SetActive(true);
                 m_PlacedPrefab.transform.position = hitPose.position;
                 m_PlacedPrefab.transform.rotation = hitPose.rotation;
-                SetAllPlanesActive(false);
+
+                Debug.Log(m_PlacedPrefab.name);
+                Debug.Log(m_PlacedPrefab.transform.position);
+                Debug.Log(m_PlacedPrefab.transform.rotation);
+                //SetAllPlanesActive(false);
             }
             else
             {
