@@ -37,6 +37,8 @@ public class PlaceOnPlane : MonoBehaviour
     [HideInInspector]
     public bool UI_Off;
 
+    private bool ObjectPlaced;
+
     void Awake()
     {
         m_RaycastManager = GetComponent<ARRaycastManager>();
@@ -46,6 +48,7 @@ public class PlaceOnPlane : MonoBehaviour
         SetAllPlanesActive(true);
 
         UI_Off = true;
+        ObjectPlaced = false;
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
@@ -70,6 +73,7 @@ public class PlaceOnPlane : MonoBehaviour
     }
 
     public bool debug = false;
+    
     void Update()
     {
 
@@ -82,7 +86,7 @@ public class PlaceOnPlane : MonoBehaviour
         if (!TryGetTouchPosition(out Vector2 touchPosition))
             return;
 
-        if (UI_Off == false) 
+        if (UI_Off == false && !ObjectPlaced) 
         {
             if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
             {
@@ -99,15 +103,18 @@ public class PlaceOnPlane : MonoBehaviour
                     m_PlacedPrefab.transform.position = hitPose.position;
                     m_PlacedPrefab.transform.rotation = hitPose.rotation;
 
+                    ObjectPlaced = true;
+                    m_ARPlaneManager.enabled = false;
+
                     Debug.Log(m_PlacedPrefab.name);
                     Debug.Log(m_PlacedPrefab.transform.position);
                     Debug.Log(m_PlacedPrefab.transform.rotation);
                     //SetAllPlanesActive(false);
                 }
-                else
-                {
-                    spawnedObject.transform.position = hitPose.position;
-                }
+                //else
+                //{
+                //    spawnedObject.transform.position = hitPose.position;
+                //}
             }
         }
     }
