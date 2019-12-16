@@ -43,7 +43,7 @@ public class UIManagerScript : MonoBehaviour
         if (_ratio >= .9f && _ratio <= 1.99f)
         {
             Debug.Log("9:16");
-            
+
             ContainerRatio.anchoredPosition = new Vector2(0, 200f);
             Debug.Log(ContainerRatio.anchoredPosition);
         }
@@ -55,7 +55,7 @@ public class UIManagerScript : MonoBehaviour
         else /*if (ratio >= 2.15f)*/
         {
             Debug.Log("9:19.5");
-            
+
             ContainerRatio.anchoredPosition = new Vector2(0, -200f);
             Debug.Log(ContainerRatio.anchoredPosition);
         }

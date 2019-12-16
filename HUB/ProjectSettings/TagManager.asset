@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Zooniverse
+  - Question
+  - Slider
+  - TM
+  - _slider
+  - _button
   - gorilla
   - lioness
   - Hub
