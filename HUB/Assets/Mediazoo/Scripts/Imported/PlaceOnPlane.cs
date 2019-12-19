@@ -103,12 +103,14 @@ public class PlaceOnPlane : MonoBehaviour
                     m_PlacedPrefab.transform.rotation = hitPose.rotation;
 
                     ObjectPlaced = true;
-                    //m_ARPlaneManager.enabled = false;
+                    
 
                     Debug.Log(m_PlacedPrefab.name);
                     Debug.Log(m_PlacedPrefab.transform.position);
                     Debug.Log(m_PlacedPrefab.transform.rotation);
-                   // SetAllPlanesActive(false);
+
+                    m_ARPlaneManager.enabled = false;
+                    SetAllPlanesActive(false);
                 }
                 //else
                 //{
@@ -126,11 +128,23 @@ public class PlaceOnPlane : MonoBehaviour
             spawnedObject = m_PlacedPrefab;
 
             ObjectPlaced = true;
+
             m_ARPlaneManager.enabled = false;
+            SetAllPlanesActive(false);
 
             Debug.Log(m_PlacedPrefab.name);
             SetAllPlanesActive(false);
         }
+    }
+
+    public void ClearSpawning()
+    {
+        m_PlacedPrefab.SetActive(false);
+        spawnedObject = m_PlacedPrefab;
+
+        ObjectPlaced = false;
+        m_ARPlaneManager.enabled = true;
+        SetAllPlanesActive(true);
     }
     
 

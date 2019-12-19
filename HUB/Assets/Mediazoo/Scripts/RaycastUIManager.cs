@@ -296,6 +296,8 @@ public class RaycastUIManager : MonoBehaviour
             LionessSlider();
         if (gorillaSwipeUp)
             GorillaSlider();
+        if (londonSwipeUp)
+            LondonSlider();
     }
 
 
@@ -315,5 +317,17 @@ public class RaycastUIManager : MonoBehaviour
     {
         LondonUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack);
         londonSwipeUp = false;
+    }
+
+    public void ClearSliders()
+    {
+        LionessUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack);
+        lionessSwipeUp = false;
+        GorillaUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack);
+        gorillaSwipeUp = false;
+        LondonUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack);
+        londonSwipeUp = false;
+
+        London.SetActive(false);
     }
 }
