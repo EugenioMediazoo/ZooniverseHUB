@@ -328,6 +328,9 @@ public class RaycastUIManager : MonoBehaviour
         LondonUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack);
         londonSwipeUp = false;
 
+        lioness_tapped = false;
+        gorilla_tapped = false;
         London.SetActive(false);
+
     }
 }
