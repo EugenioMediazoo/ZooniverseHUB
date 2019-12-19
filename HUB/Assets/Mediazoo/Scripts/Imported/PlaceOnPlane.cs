@@ -76,7 +76,6 @@ public class PlaceOnPlane : MonoBehaviour
     
     void Update()
     {
-
         if (debug)
         {
             Test();
@@ -104,7 +103,7 @@ public class PlaceOnPlane : MonoBehaviour
                     m_PlacedPrefab.transform.rotation = hitPose.rotation;
 
                     ObjectPlaced = true;
-                    m_ARPlaneManager.enabled = false;
+                    //m_ARPlaneManager.enabled = false;
 
                     Debug.Log(m_PlacedPrefab.name);
                     Debug.Log(m_PlacedPrefab.transform.position);
@@ -124,7 +123,13 @@ public class PlaceOnPlane : MonoBehaviour
         if (spawnedObject == null)
         {
             m_PlacedPrefab.SetActive(true);
+            spawnedObject = m_PlacedPrefab;
+
+            ObjectPlaced = true;
+            m_ARPlaneManager.enabled = false;
+
             Debug.Log(m_PlacedPrefab.name);
+            SetAllPlanesActive(false);
         }
     }
     

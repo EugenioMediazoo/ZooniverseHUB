@@ -26,8 +26,9 @@ public class RaycastUIManager : MonoBehaviour
     private bool gorillaSwipeUp;
     private bool londonSwipeUp;
 
-    public bool taPlioness;
-    public bool taPgorilla;
+    ////only for debug >>> open debug region and uncomment
+    //public bool TapLioness;
+    //public bool TapGorilla;
 
     private void Awake()
     {
@@ -38,35 +39,67 @@ public class RaycastUIManager : MonoBehaviour
         gorillaSwipeUp = false;
         londonSwipeUp = false;
 
-
         London.SetActive(false);
 
-        //taPlioness = false;
-        //taPgorilla = false;
+        //TapLioness = false;
+        //TapGorilla = false;
     }
 
     void Update()
     {
-        //if(taPlioness)
+
+        #region debug
+        //if (TapLioness)
         //{
+        //    TapLioness = false;
+
         //    Debug.Log("Lionesse tapped");
         //    lioness_Particles.Stop();
         //    LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
         //    lioness_tapped = true;
-        //    taPlioness = false;
         //    lionessSwipeUp = true;
+
+        //    if (gorillaSwipeUp)
+        //    {
+        //        Sequence gorillaSequence = DOTween.Sequence();
+        //        gorillaSequence.Append(GorillaUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+        //          .AppendInterval(0.5f)
+        //          .Append(LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+        //    }
+        //    else if (!gorillaSwipeUp && !lionessSwipeUp)
+        //    {
+        //        LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+        //    }
         //}
 
-        //if(taPgorilla)
+        //if (TapGorilla)
         //{
+        //    TapGorilla = false;
+
         //    Debug.Log("Gorilla tapped");
         //    gorilla_Particles.Stop();
         //    GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
         //    gorilla_tapped = true;
-        //    taPgorilla = false;
         //    gorillaSwipeUp = true;
+
+        //    if (lionessSwipeUp)
+        //    {
+        //        Sequence gorillaSequence = DOTween.Sequence();
+        //        gorillaSequence.Append(LionessUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+        //          .AppendInterval(0.5f)
+        //          .Append(GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+        //    }
+        //    else if (!lionessSwipeUp && !gorillaSwipeUp)
+        //    {
+        //        GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+        //    }
         //}
 
+        //if (gorilla_tapped && lioness_tapped)
+        //{
+        //    London.SetActive(true);
+        //}
+        #endregion
 
         if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
         {
@@ -92,7 +125,7 @@ public class RaycastUIManager : MonoBehaviour
                           .AppendInterval(0.5f)
                           .Append(LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
                     }
-                    else if (!gorillaSwipeUp)
+                    else if (!gorillaSwipeUp && !lionessSwipeUp)
                     {
                         LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
                     }
@@ -103,7 +136,7 @@ public class RaycastUIManager : MonoBehaviour
                 {
                     Debug.Log("Gorilla tapped");
                     gorilla_Particles.Stop();
-                    //GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+                    GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
                     gorilla_tapped = true;
                     gorillaSwipeUp = true;
 
@@ -114,7 +147,7 @@ public class RaycastUIManager : MonoBehaviour
                           .AppendInterval(0.5f)
                           .Append(GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
                     }
-                    else if (!lionessSwipeUp)
+                    else if (!lionessSwipeUp && !gorillaSwipeUp)
                     {
                         GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
                     }
@@ -127,10 +160,16 @@ public class RaycastUIManager : MonoBehaviour
                 }
             }
 
-            if (gorilla_tapped && lioness_tapped)
-            {
-                London.SetActive(true);
-            }
+            //if (gorilla_tapped && lioness_tapped)
+            //{
+            //    London.SetActive(true);
+            //}
+        }
+
+        if (gorilla_tapped && lioness_tapped)
+        {
+            Debug.Log("LondonActive");
+            London.SetActive(true);
         }
     }
 
