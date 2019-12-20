@@ -1486,7 +1486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Jungle
+  m_text: The Habitat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9deac5ee7251c8b4d98f52feea29e1ee, type: 2}
   m_sharedMaterial: {fileID: 7428458469364382649, guid: 9deac5ee7251c8b4d98f52feea29e1ee,
@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 710958090}
-    characterCount: 10
+    characterCount: 11
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -3197,8 +3197,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Gorilla is the embodiment of strong physical and verbal communication
-    emphasising the strength in positive messaging.
+  m_text: Together, they create Media Zoo, a hub for Film, PR and Learning, resulting
+    in Media Zoo becoming the award winning agency it is today.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3b95358ea882da4cb4807a1aaf9924c, type: 2}
   m_sharedMaterial: {fileID: 1695606613668374106, guid: f3b95358ea882da4cb4807a1aaf9924c,
@@ -3227,7 +3227,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 80
+  m_fontSize: 76.7
   m_fontSizeBase: 140
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3268,10 +3268,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1193472225}
-    characterCount: 121
+    characterCount: 135
     spriteCount: 0
-    spaceCount: 16
-    wordCount: 17
+    spaceCount: 23
+    wordCount: 24
     linkCount: 0
     lineCount: 4
     pageCount: 1
@@ -5273,8 +5273,6 @@ MonoBehaviour:
   LionessUI: {fileID: 1522282101}
   GorillaUI: {fileID: 1452669416}
   LondonUI: {fileID: 1755315642}
-  lioness_Particles: {fileID: 0}
-  gorilla_Particles: {fileID: 0}
   London: {fileID: 732633471}
   time: 0.9
   AppendTime: 0.05

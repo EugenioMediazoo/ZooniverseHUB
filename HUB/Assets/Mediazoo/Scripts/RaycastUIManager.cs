@@ -11,8 +11,8 @@ public class RaycastUIManager : MonoBehaviour
     public GameObject GorillaUI;
     public GameObject LondonUI;
 
-    public ParticleSystem lioness_Particles;
-    public ParticleSystem gorilla_Particles;
+    //public ParticleSystem lioness_Particles;
+    //public ParticleSystem gorilla_Particles;
 
     public GameObject London;
 
@@ -176,7 +176,7 @@ public class RaycastUIManager : MonoBehaviour
                 if (raycastHit.collider.CompareTag("lioness"))
                 {
                     Debug.Log("Lionesse tapped");
-                    lioness_Particles.Stop();
+                    //lioness_Particles.Stop();
                     //LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
                     lioness_tapped = true;       
 
@@ -211,7 +211,7 @@ public class RaycastUIManager : MonoBehaviour
                 if (raycastHit.collider.CompareTag("gorilla"))
                 {
                     Debug.Log("Gorilla tapped");
-                    gorilla_Particles.Stop();
+                    //gorilla_Particles.Stop();
                     //GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
                     gorilla_tapped = true;
 
