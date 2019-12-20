@@ -5,9 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Zooniverse
+  - Slider
   - gorilla
   - lioness
   - Hub
+  - london
   layers:
   - Default
   - TransparentFX

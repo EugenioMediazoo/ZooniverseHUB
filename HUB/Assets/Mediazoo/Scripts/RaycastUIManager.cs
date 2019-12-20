@@ -11,13 +11,16 @@ public class RaycastUIManager : MonoBehaviour
     public GameObject GorillaUI;
     public GameObject LondonUI;
 
-    public ParticleSystem lioness_Particles;
-    public ParticleSystem gorilla_Particles;
+    //public ParticleSystem lioness_Particles;
+    //public ParticleSystem gorilla_Particles;
 
     public GameObject London;
 
     [Range(0.01f, 3f)]
     public float time;
+
+    [Range(0.01f, 3f)]
+    public float AppendTime;
 
     private bool lioness_tapped;
     private bool gorilla_tapped;
@@ -26,8 +29,10 @@ public class RaycastUIManager : MonoBehaviour
     private bool gorillaSwipeUp;
     private bool londonSwipeUp;
 
-    public bool taPlioness;
-    public bool taPgorilla;
+    ////only for debug >>> open debug region and uncomment
+    //public bool TapLioness;
+    //public bool TapGorilla;
+    //public bool TapLondon;
 
     private void Awake()
     {
@@ -38,35 +43,126 @@ public class RaycastUIManager : MonoBehaviour
         gorillaSwipeUp = false;
         londonSwipeUp = false;
 
-
         London.SetActive(false);
 
-        //taPlioness = false;
-        //taPgorilla = false;
+        ////only for debug >>> open debug region and uncomment
+        //TapLioness = false;
+        //TapGorilla = false;
+        //TapLondon = false;
     }
 
     void Update()
     {
-        //if(taPlioness)
+
+        #region debug
+
+        //if (TapLioness)
         //{
+        //    TapLioness = false;
+
         //    Debug.Log("Lionesse tapped");
         //    lioness_Particles.Stop();
-        //    LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+        //    //LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
         //    lioness_tapped = true;
-        //    taPlioness = false;
-        //    lionessSwipeUp = true;
+
+        //    if (gorillaSwipeUp)
+        //    {
+        //        lionessSwipeUp = true;
+        //        gorillaSwipeUp = false;
+
+        //        Sequence Sequence = DOTween.Sequence();
+        //        Sequence.Append(GorillaUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+        //            .AppendInterval(AppendTime)
+        //            .Append(LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+        //    }
+        //    else if (londonSwipeUp)
+        //    {
+        //        lionessSwipeUp = true;
+        //        londonSwipeUp = false;
+
+        //        Sequence SequenceTwo = DOTween.Sequence();
+        //        SequenceTwo.Append(LondonUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+        //            .AppendInterval(AppendTime)
+        //            .Append(LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+        //    }
+        //    else if (!gorillaSwipeUp && !londonSwipeUp)
+        //    {
+        //        lionessSwipeUp = true;
+        //        LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+        //    }
         //}
 
-        //if(taPgorilla)
+        //if (TapGorilla)
         //{
+        //    TapGorilla = false;
+
         //    Debug.Log("Gorilla tapped");
         //    gorilla_Particles.Stop();
-        //    GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+        //    //GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
         //    gorilla_tapped = true;
-        //    taPgorilla = false;
-        //    gorillaSwipeUp = true;
+
+        //    if (lionessSwipeUp)
+        //    {
+        //        gorillaSwipeUp = true;
+        //        lionessSwipeUp = false;
+
+        //        Sequence Sequence = DOTween.Sequence();
+        //        Sequence.Append(LionessUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+        //          .AppendInterval(AppendTime)
+        //          .Append(GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+        //    }
+        //    else if (londonSwipeUp)
+        //    {
+        //        gorillaSwipeUp = true;
+        //        londonSwipeUp = false;
+
+        //        Sequence SequenceTwo = DOTween.Sequence();
+        //        SequenceTwo.Append(LondonUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+        //          .AppendInterval(AppendTime)
+        //          .Append(GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+        //    }
+        //    else if (!lionessSwipeUp && !londonSwipeUp)
+        //    {
+        //        gorillaSwipeUp = true;
+        //        GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+        //    }
         //}
 
+        //if (TapLondon)
+        //{
+        //    TapLondon = false;
+
+        //    Debug.Log("London tapped");
+        //    //LondonUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+
+        //    if (lionessSwipeUp)
+        //    {
+        //        londonSwipeUp = true;
+        //        lionessSwipeUp = false;
+
+        //        Sequence Sequence = DOTween.Sequence();
+        //        Sequence.Append(LionessUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+        //          .AppendInterval(AppendTime)
+        //          .Append(LondonUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+        //    }
+        //    else if (gorillaSwipeUp)
+        //    {
+        //        londonSwipeUp = true;
+        //        gorillaSwipeUp = false;
+
+        //        Sequence Sequence = DOTween.Sequence();
+        //        Sequence.Append(GorillaUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+        //          .AppendInterval(AppendTime)
+        //          .Append(LondonUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+        //    }
+        //    else if (!lionessSwipeUp && !gorillaSwipeUp)
+        //    {
+        //        londonSwipeUp = true;
+        //        LondonUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+        //    }
+        //}
+
+        #endregion
 
         if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
         {
@@ -76,61 +172,118 @@ public class RaycastUIManager : MonoBehaviour
             RaycastHit raycastHit;
             if (Physics.Raycast(raycast, out raycastHit))
             {
-
+                // LIONESS //
                 if (raycastHit.collider.CompareTag("lioness"))
                 {
                     Debug.Log("Lionesse tapped");
-                    lioness_Particles.Stop();
-                    LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
-                    lioness_tapped = true;
-                    lionessSwipeUp = true;
+                    //lioness_Particles.Stop();
+                    //LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+                    lioness_tapped = true;       
 
                     if (gorillaSwipeUp)
                     {
-                        Sequence gorillaSequence = DOTween.Sequence();
-                        gorillaSequence.Append(GorillaUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
-                          .AppendInterval(0.5f)
+                        lionessSwipeUp = true;
+                        gorillaSwipeUp = false;
+
+                        Sequence Sequence = DOTween.Sequence();
+                        Sequence.Append(GorillaUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+                          .AppendInterval(AppendTime)
                           .Append(LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
                     }
-                    else if (!gorillaSwipeUp)
+                    else if (londonSwipeUp)
                     {
+                        lionessSwipeUp = true;
+                        londonSwipeUp = false;
+
+                        Sequence SequenceTwo = DOTween.Sequence();
+                        SequenceTwo.Append(LondonUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+                          .AppendInterval(AppendTime)
+                          .Append(LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+                    }
+                    else if (!gorillaSwipeUp && !londonSwipeUp)
+                    {
+                        lionessSwipeUp = true;
                         LionessUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
                     }
-
                 }
 
+                // GORILLA //
                 if (raycastHit.collider.CompareTag("gorilla"))
                 {
                     Debug.Log("Gorilla tapped");
-                    gorilla_Particles.Stop();
+                    //gorilla_Particles.Stop();
                     //GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
                     gorilla_tapped = true;
-                    gorillaSwipeUp = true;
 
                     if (lionessSwipeUp)
                     {
-                        Sequence gorillaSequence = DOTween.Sequence();
-                        gorillaSequence.Append(LionessUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
-                          .AppendInterval(0.5f)
+                        gorillaSwipeUp = true;
+                        lionessSwipeUp = false;
+
+                        Sequence Sequence = DOTween.Sequence();
+                        Sequence.Append(LionessUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+                          .AppendInterval(AppendTime)
                           .Append(GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
                     }
-                    else if (!lionessSwipeUp)
+                    else if (londonSwipeUp)
                     {
+                        gorillaSwipeUp = true;
+                        londonSwipeUp = false;
+
+                        Sequence SequenceTwo = DOTween.Sequence();
+                        SequenceTwo.Append(LondonUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+                          .AppendInterval(AppendTime)
+                          .Append(GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+                    }
+                    else if (!lionessSwipeUp && !londonSwipeUp)
+                    {
+                        gorillaSwipeUp = true;
                         GorillaUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
                     }
                 }
+
+                // LONDON //
                 if (raycastHit.collider.CompareTag("london"))
                 {
                     Debug.Log("London tapped");
-                    LondonUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
-                    londonSwipeUp = true;
+                    //LondonUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+
+                    if (lionessSwipeUp)
+                    {
+                        londonSwipeUp = true;
+                        lionessSwipeUp = false;
+
+                        Sequence Sequence = DOTween.Sequence();
+                        Sequence.Append(LionessUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+                          .AppendInterval(AppendTime)
+                          .Append(LondonUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+                    }
+                    else if (gorillaSwipeUp)
+                    {
+                        londonSwipeUp = true;
+                        gorillaSwipeUp = false;
+
+                        Sequence Sequence = DOTween.Sequence();
+                        Sequence.Append(GorillaUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack))
+                          .AppendInterval(AppendTime)
+                          .Append(LondonUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack));
+                    }
+                    else if (!lionessSwipeUp && !gorillaSwipeUp)
+                    {
+                        londonSwipeUp = true;
+                        LondonUI.transform.DOMoveY(450, time).SetEase(Ease.OutBack);
+                    }
                 }
             }
+        }
 
-            if (gorilla_tapped && lioness_tapped)
-            {
-                London.SetActive(true);
-            }
+        if (gorilla_tapped && lioness_tapped && !London.activeSelf)
+        {
+            //Debug.Log("LondonActive");
+            London.SetActive(true);
+
+            //Debug.Log(London.transform.position);
+            //Debug.Log(London.transform.rotation);
         }
     }
 
@@ -140,6 +293,8 @@ public class RaycastUIManager : MonoBehaviour
             LionessSlider();
         if (gorillaSwipeUp)
             GorillaSlider();
+        if (londonSwipeUp)
+            LondonSlider();
     }
 
 
@@ -159,5 +314,20 @@ public class RaycastUIManager : MonoBehaviour
     {
         LondonUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack);
         londonSwipeUp = false;
+    }
+
+    public void ClearSliders()
+    {
+        LionessUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack);
+        lionessSwipeUp = false;
+        GorillaUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack);
+        gorillaSwipeUp = false;
+        LondonUI.transform.DOMoveY(-450, time).SetEase(Ease.OutBack);
+        londonSwipeUp = false;
+
+        lioness_tapped = false;
+        gorilla_tapped = false;
+        London.SetActive(false);
+
     }
 }

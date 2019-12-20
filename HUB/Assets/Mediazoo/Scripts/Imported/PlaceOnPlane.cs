@@ -38,6 +38,7 @@ public class PlaceOnPlane : MonoBehaviour
     public bool UI_Off;
 
     private bool ObjectPlaced;
+    //private bool spawnedCleared = false;
 
     void Awake()
     {
@@ -76,7 +77,6 @@ public class PlaceOnPlane : MonoBehaviour
     
     void Update()
     {
-
         if (debug)
         {
             Test();
@@ -85,35 +85,51 @@ public class PlaceOnPlane : MonoBehaviour
 
         if (!TryGetTouchPosition(out Vector2 touchPosition))
             return;
-
+;
         if (UI_Off == false && !ObjectPlaced) 
         {
             if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
             {
                 // Raycast hits are sorted by distance, so the first one
                 // will be the closest hit.
+                
                 var hitPose = s_Hits[0].pose;
 
-                if (spawnedObject == null)
-                {
-                    //spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
-                    
-                    m_PlacedPrefab.SetActive(true);
-                    spawnedObject = m_PlacedPrefab;
-                    m_PlacedPrefab.transform.position = hitPose.position;
-                    m_PlacedPrefab.transform.rotation = hitPose.rotation;
+                m_PlacedPrefab.SetActive(true);
+                spawnedObject = m_PlacedPrefab;
+                m_PlacedPrefab.transform.position = hitPose.position;
+                m_PlacedPrefab.transform.rotation = hitPose.rotation;
 
-                    ObjectPlaced = true;
-                    m_ARPlaneManager.enabled = false;
+                ObjectPlaced = true;
 
-                    Debug.Log(m_PlacedPrefab.name);
-                    Debug.Log(m_PlacedPrefab.transform.position);
-                    Debug.Log(m_PlacedPrefab.transform.rotation);
-                    //SetAllPlanesActive(false);
-                }
-                //else
+                m_ARPlaneManager.enabled = false;
+                SetAllPlanesActive(false);
+
+                //if (spawnedObject == null)
                 //{
-                //    spawnedObject.transform.position = hitPose.position;
+                //    m_PlacedPrefab.SetActive(true);
+                //    spawnedObject = m_PlacedPrefab;
+                //    m_PlacedPrefab.transform.position = hitPose.position;
+                //    m_PlacedPrefab.transform.rotation = hitPose.rotation;
+
+                //    ObjectPlaced = true;
+
+                //    m_ARPlaneManager.enabled = false;
+                //    SetAllPlanesActive(false);
+                //}
+                //else if(spawnedCleared)
+                //{
+                //    m_PlacedPrefab.SetActive(true);
+                //    spawnedObject = m_PlacedPrefab;
+                //    m_PlacedPrefab.transform.position = hitPose.position;
+                //    m_PlacedPrefab.transform.rotation = hitPose.rotation;
+
+                //    ObjectPlaced = true;
+
+                //    m_ARPlaneManager.enabled = false;
+                //    SetAllPlanesActive(false);
+
+                //    spawnedCleared = !spawnedCleared;
                 //}
             }
         }
@@ -121,11 +137,39 @@ public class PlaceOnPlane : MonoBehaviour
 
     public void Test()
     {
-        if (spawnedObject == null)
-        {
+        //if (spawnedObject == null)
+        //{
             m_PlacedPrefab.SetActive(true);
-            Debug.Log(m_PlacedPrefab.name);
-        }
+            spawnedObject = m_PlacedPrefab;
+
+            ObjectPlaced = true;
+
+            m_ARPlaneManager.enabled = false;
+            SetAllPlanesActive(false);
+        //}
+        //else if (spawnedCleared)
+        //{
+        //    m_PlacedPrefab.SetActive(true);
+        //    spawnedObject = m_PlacedPrefab;
+
+        //    ObjectPlaced = true;
+
+        //    m_ARPlaneManager.enabled = false;
+        //    SetAllPlanesActive(false);
+
+        //    spawnedCleared = !spawnedCleared;
+        //}
+    }
+
+    public void ClearSpawning()
+    {
+        m_PlacedPrefab.SetActive(false);
+
+        ObjectPlaced = false;
+        m_ARPlaneManager.enabled = true;
+        SetAllPlanesActive(true);
+
+        //spawnedCleared = true;
     }
     
 
