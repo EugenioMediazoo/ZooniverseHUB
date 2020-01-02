@@ -104,6 +104,12 @@ public class UIARInstructions : MonoBehaviour
         //MoveSlowly.SetActive(false);
     }
 
+    public void Skip()
+    {
+        ARInstructions.SetActive(false);
+        PlaceScript.UI_Off = false;
+    }
+
     IEnumerator TapOnOff()
     {
         yield return new WaitForSeconds(AnimationSpeed);

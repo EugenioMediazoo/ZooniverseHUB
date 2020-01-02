@@ -14,6 +14,7 @@ public class RaycastUIManager : MonoBehaviour
     //public ParticleSystem lioness_Particles;
     //public ParticleSystem gorilla_Particles;
 
+    public GameObject Gorilla;
     public GameObject London;
 
     [Range(0.01f, 3f)]
@@ -44,6 +45,7 @@ public class RaycastUIManager : MonoBehaviour
         londonSwipeUp = false;
 
         London.SetActive(false);
+        Gorilla.SetActive(false);
 
         ////only for debug >>> open debug region and uncomment
         //TapLioness = false;
@@ -275,6 +277,10 @@ public class RaycastUIManager : MonoBehaviour
                     }
                 }
             }
+        }
+        if (lioness_tapped && !Gorilla.activeSelf)
+        {
+            Gorilla.SetActive(true);
         }
 
         if (gorilla_tapped && lioness_tapped && !London.activeSelf)
