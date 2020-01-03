@@ -1766,7 +1766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &477709647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2780,8 +2780,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 266815831}
   m_HandleRect: {fileID: 266815830}
   m_Direction: 2
-  m_Value: 1.0000091
-  m_Size: 0.98791957
+  m_Value: 1.0628798
+  m_Size: 0.98791945
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3010,7 +3010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -1.6977539}
   m_SizeDelta: {x: 2471.3, y: 2235}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1061831868
@@ -3522,7 +3522,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1110694651}
-          m_MethodName: LaunchSceene
+          m_MethodName: LaunchZooniverse
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

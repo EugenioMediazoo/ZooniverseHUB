@@ -29,4 +29,9 @@ public class SceneLauncher : MonoBehaviour
                 Debug.Log("currentSelectedGameObject is untagged");
         }
     }
+
+    public void LaunchZooniverse()
+    {
+        SceneManager.LoadScene(ZooniverseAR, LoadSceneMode.Single);
+    }
 }
