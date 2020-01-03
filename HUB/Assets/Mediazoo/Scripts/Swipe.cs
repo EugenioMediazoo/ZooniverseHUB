@@ -6,14 +6,6 @@ using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
-    ////Buttons
-    //public GameObject CaseStudySwipeDetected;
-    //public GameObject AboutSwipeDetected;
-
-    ////animation variable
-    //public GameObject SlideCaseStudyBG; 
-    //public GameObject SlideAboutBG;
-
     //scripts
     public UIManagerScript ManagerUI;
     public RaycastUIManager RaycastUI;
@@ -87,16 +79,6 @@ public class Swipe : MonoBehaviour
                 }
             }
         }
-
-        //if (CaseStudySwipeDetected.GetComponent<buttonDebug>().selected)
-        //{
-        //    Debug.Log("readytoSwipe1");
-        //}
-
-        //if (AboutSwipeDetected.GetComponent<buttonDebug>().selected)
-        //{
-        //    Debug.Log("readytoSwipe2");
-        //}
     }
 
     void Swipeing()
@@ -139,28 +121,8 @@ public class Swipe : MonoBehaviour
                         ManagerUI.AboutSlider();
                     }
                 }
-
-
-                //if (CaseStudySwipeDetected != null)
-                //{
-                //    if (CaseStudySwipeDetected.GetComponent<CaseStudySwipeDetectorSwipe>().selected)
-                //    {
-                //        ManagerUI.CaseStudySlider();
-                //        Debug.Log("readytoSwipe");
-                //        //SlideCaseStudyBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
-                //    }
-                //}
-
-                //if (AboutSwipeDetected != null)
-                //{
-                //    if (AboutSwipeDetected.GetComponent<buttonDebug>().selected)
-                //    {
-                //        ManagerUI.AboutSlider();
-                //        //Debug.Log("readytoSwipe");
-                //        //SlideAboutBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
-                //    }
-                //}
             }
+
             else if (distance.y < 0)
             {
                 Debug.Log("Down Swipe");
@@ -170,8 +132,7 @@ public class Swipe : MonoBehaviour
                     if(ManagerUI != null)
                     {
                         ManagerUI.CaseStudySlider();
-                    }
-                        
+                    }  
                 }
                 else if (startPos.y < buttonDividerHigh)
                 {
@@ -182,33 +143,12 @@ public class Swipe : MonoBehaviour
                 }
                 
                 if (RaycastUI != null)
-                    {
-                        RaycastUI.UISlider();
-                        Debug.Log("SWipeDown");
-                    }
-               
-
-                //if (CaseStudySwipeDetected != null)
-                //{
-                //    if(CaseStudySwipeDetected.GetComponent<CaseStudySwipeDetectorSwipe>().selected)
-                //    {
-                //        ManagerUI.CaseStudySlider();
-                //        //Debug.Log("readytoSwipe");
-                //        //SlideCaseStudyBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
-                //    }
-                //}
-
-                //if (AboutSwipeDetected != null)
-                //{
-                //    if (AboutSwipeDetected.GetComponent<buttonDebug>().selected)
-                //    {
-                //        ManagerUI.AboutSlider();
-                //        //Debug.Log("readytoSwipe");
-                //        //SlideAboutBG.transform.DOMoveY(0, ManagerUI.time).SetEase(Ease.OutBack);
-                //    }
-                //}
+                {
+                    RaycastUI.UISlider();
+                    Debug.Log("SWipeDown");
+                }
             }
-            #endregion
         }
+        #endregion
     }
 }
