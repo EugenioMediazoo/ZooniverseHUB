@@ -6,13 +6,15 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIManagerScript : MonoBehaviour
+public class UIManagerHUB : MonoBehaviour
 {
     //Images and gameObjects
     public Image CaseStudy;
     public Image About;
     public Image CaseStudyArrow;
     public Image AboutArrow;
+
+    public CanvasGroup InteractiveTiles;
 
     //public GameObject ContainerRatio;
     public RectTransform ContainerRatio;
@@ -106,50 +108,56 @@ public class UIManagerScript : MonoBehaviour
         {
             if (!CaseStudyStatus)
             {
-                CaseStudy.transform.DOMoveY((screenHeight * 0.36f), time).SetEase(Ease.OutBack);
+                CaseStudy.transform.DOMoveY((screenHeight * 0.36f), time).SetEase(Ease.InOutCirc);
                 CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.LocalAxisAdd).SetEase(Ease.OutBack);
+                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.LocalAxisAdd).SetEase(Ease.InOutCirc);
+
+                //InteractiveTiles.transform.DOMoveY((screenHeight * 0.36f), time).SetEase(Ease.InOutCirc);
             }
             else if (CaseStudyStatus && !AboutStatus)
             {
-                CaseStudy.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.OutBack);
+                CaseStudy.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.InOutCirc);
                 CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
+
+                InteractiveTiles.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.InOutCirc);
             }
             else if (CaseStudyStatus && AboutStatus)
             {
-                CaseStudy.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.OutBack);
+                CaseStudy.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.InOutCirc);
                 CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
 
-                About.transform.DOMoveY(((screenHeight * 0.443f) * -1), time).SetEase(Ease.OutBack);
+                InteractiveTiles.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.InOutCirc);
+
+                About.transform.DOMoveY(((screenHeight * 0.443f) * -1), time).SetEase(Ease.InOutCirc);
                 AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
             }
         }
         else if (_ratio >= 2f)
         {
             if (!CaseStudyStatus)
             {
-                CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.OutBack);
+                CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.InOutCirc);
                 CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.LocalAxisAdd).SetEase(Ease.OutBack);
+                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.LocalAxisAdd).SetEase(Ease.InOutCirc);
             }
             else if (CaseStudyStatus && !AboutStatus)
             {
-                CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.OutBack);
+                CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.InOutCirc);
                 CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
             }
             else if (CaseStudyStatus && AboutStatus)
             {
-                CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.OutBack);
+                CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.InOutCirc);
                 CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
 
-                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.OutBack);
+                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.InOutCirc);
                 AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
             }
         }
     }
@@ -160,50 +168,50 @@ public class UIManagerScript : MonoBehaviour
         {
             if (!AboutStatus && !CaseStudyStatus)
             {
-                About.transform.DOMoveY((screenHeight * 0.24f), time).SetEase(Ease.OutBack);
+                About.transform.DOMoveY((screenHeight * 0.24f), time).SetEase(Ease.InOutCirc);
                 AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
 
-                CaseStudy.transform.DOMoveY((screenHeight * 0.36f), time).SetEase(Ease.OutBack);
+                CaseStudy.transform.DOMoveY((screenHeight * 0.36f), time).SetEase(Ease.InOutCirc);
                 CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
             }
             else if (!AboutStatus && CaseStudyStatus)
             {
-                About.transform.DOMoveY((screenHeight * 0.24f), time).SetEase(Ease.OutBack);
+                About.transform.DOMoveY((screenHeight * 0.24f), time).SetEase(Ease.InOutCirc);
                 AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
             }
             else if (AboutStatus)
             {
-                About.transform.DOMoveY(((screenHeight * 0.443f) * -1), time).SetEase(Ease.OutBack);
+                About.transform.DOMoveY(((screenHeight * 0.443f) * -1), time).SetEase(Ease.InOutCirc);
                 AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
             }
         }
         else if (_ratio >= 2f)
         {
             if (AboutStatus)
             {
-                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.OutBack);
+                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.InOutCirc);
                 AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
             }
             else if (!AboutStatus && CaseStudyStatus)
             {
-                About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.OutBack);
+                About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.InOutCirc);
                 AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
             }
             else if (!AboutStatus && !CaseStudyStatus)
             {
-                About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.OutBack);
+                About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.InOutCirc);
                 AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
 
-                CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.OutBack);
+                CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.InOutCirc);
                 CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.OutBack);
+                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
             }
         }
     }

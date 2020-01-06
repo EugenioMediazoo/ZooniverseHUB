@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Swipe : MonoBehaviour
 {
     //scripts
-    public UIManagerScript ManagerUI;
+    public UIManagerHUB ManagerUI;
     public RaycastUIManager RaycastUI;
 
     //swipe variables
@@ -33,7 +33,7 @@ public class Swipe : MonoBehaviour
     {
         if(ManagerUI != null)
         {
-            UIManagerScript ManagerUI = GetComponent<UIManagerScript>();
+            UIManagerHUB ManagerUI = GetComponent<UIManagerHUB>();
         }
 
         if (RaycastUI != null)
