@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class EventTrigger : MonoBehaviour/*, IPointerDownHandler, IPointerUpHandler*/
+public class InteractiveTileTrigger : MonoBehaviour/*, IPointerDownHandler, IPointerUpHandler*/
 {
     //public UnityEngine.Events.UnityEvent SceneLauncher;
 
     //public objects
     //public CanvasGroup CanvasG;
-    public GameObject CanvasGObj;
-    private CanvasGroup canvasGroup;
+    public GameObject InteractiveTileObj;
+    private CanvasGroup InteractiveTileCanvas;
 
     //SceneLauncher script
     public GameObject UIManager;
@@ -19,32 +19,32 @@ public class EventTrigger : MonoBehaviour/*, IPointerDownHandler, IPointerUpHand
 
     //Variables
     [Range(0.1f, 5)]
-    public float AnimationSpeed = 1f;
+    public float AnimationSpeed = 0.12f;
 
     public void Awake()
     {
-        canvasGroup = CanvasGObj.GetComponent<CanvasGroup>();
+        InteractiveTileCanvas = InteractiveTileObj.GetComponent<CanvasGroup>();
         Scene = UIManager.GetComponent<SceneLauncher>();
     }
 
     //public void OnPointerDown(PointerEventData eventData)
     //{
-    //    DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
+    //    DOTween.To(() => InteractiveTileCanvas.alpha, x => InteractiveTileCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
     //    //Debug.Log("P_UP");
     //}
 
     //public void OnPointerUp(PointerEventData eventData)
     //{
-    //    DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
+    //    DOTween.To(() => InteractiveTileCanvas.alpha, x => InteractiveTileCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
     //    //Scene.LaunchZooniverse();
     //    //Debug.Log("P_Down");
     //}
 
-    public void buttonTest()
+    public void InteractiveTile()
     {
         Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad))
-          .Append(DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad));
+        mySequence.Append(DOTween.To(() => InteractiveTileCanvas.alpha, x => InteractiveTileCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad))
+          .Append(DOTween.To(() => InteractiveTileCanvas.alpha, x => InteractiveTileCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad));
 
         StartCoroutine(LaunchScene());
     }

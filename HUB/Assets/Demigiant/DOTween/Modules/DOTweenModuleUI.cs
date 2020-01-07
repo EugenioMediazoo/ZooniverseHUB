@@ -19,7 +19,7 @@ namespace DG.Tweening
         #region CanvasGroup
 
         /// <summary>Tweens a CanvasGroup's alpha color to the given value.
-        /// Also stores the canvasGroup as the tween's target so it can be used for filtered operations</summary>
+        /// Also stores the InteractiveTileCanvas as the tween's target so it can be used for filtered operations</summary>
         /// <param name="endValue">The end value to reach</param><param name="duration">The duration of the tween</param>
         public static TweenerCore<float, float, FloatOptions> DOFade(this CanvasGroup target, float endValue, float duration)
         {
