@@ -334,6 +334,7 @@ public class RaycastUIManager : MonoBehaviour
         lioness_tapped = false;
         gorilla_tapped = false;
         London.SetActive(false);
+        Gorilla.SetActive(false);
 
     }
 }
