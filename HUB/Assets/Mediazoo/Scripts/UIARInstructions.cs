@@ -11,6 +11,7 @@ public class UIARInstructions : MonoBehaviour
 
     //Gameobjects
     public GameObject ARInstructions;
+    public GameObject SkipButton;
     public GameObject Arrows;
     public GameObject Phone;
     public GameObject Finger;
@@ -75,6 +76,7 @@ public class UIARInstructions : MonoBehaviour
           .Append(Grid.transform.DOLocalMoveX(distX, AnimationSpeed).SetEase(Ease.InOutQuad).SetLoops(2, LoopType.Yoyo))
           .Append(Grid.transform.DOLocalMoveY(-distY, AnimationSpeed).SetEase(Ease.InOutQuad).SetLoops(2, LoopType.Yoyo))
           .Append(Grid.transform.DOLocalMoveY(distY, AnimationSpeed).SetEase(Ease.InOutQuad).SetLoops(2, LoopType.Yoyo));
+        
     }
 
     IEnumerator ActivateGrid() 
@@ -127,9 +129,12 @@ public class UIARInstructions : MonoBehaviour
         yield return new WaitForSeconds(AnimationSpeed);
 
         ARInstructions.transform.DOLocalMoveY(((Screen.height*2)*-1), AnimationSpeed).SetEase(Ease.InCubic);
+        SkipButton.transform.DOLocalMoveY(((Screen.height * 2) * -1), AnimationSpeed).SetEase(Ease.InCubic);
         yield return new WaitForSeconds(AnimationSpeed*2);
         ARInstructions.SetActive(false);
-        
+        SkipButton.SetActive(false);
+
+
         PlaceScript.UI_Off = false;
     }
 }
