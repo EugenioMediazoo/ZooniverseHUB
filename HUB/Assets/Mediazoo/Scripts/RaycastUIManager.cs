@@ -11,6 +11,8 @@ public class RaycastUIManager : MonoBehaviour
     public GameObject GorillaUI;
     public GameObject LondonUI;
 
+    public GameObject Hihglight;
+
     //public ParticleSystem lioness_Particles;
     //public ParticleSystem gorilla_Particles;
 
@@ -281,6 +283,7 @@ public class RaycastUIManager : MonoBehaviour
         if (lioness_tapped && !Gorilla.activeSelf)
         {
             Gorilla.SetActive(true);
+            Hihglight.SetActive(false);
         }
 
         if (gorilla_tapped && lioness_tapped && !London.activeSelf)
