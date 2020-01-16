@@ -8,6 +8,7 @@ public class SceneLauncher : MonoBehaviour
 {
     //public scenes
     public string ZooniverseAR;
+    public string Onboarding;
     public string Hub;
 
     public void LaunchSceene()
@@ -21,6 +22,11 @@ public class SceneLauncher : MonoBehaviour
                 Debug.Log(_button.tag);
             }
             else if (_button.CompareTag("Hub"))
+            {
+                SceneManager.LoadScene(Hub, LoadSceneMode.Single);
+                Debug.Log(_button.tag);
+            }
+            else if (_button.CompareTag("Onboarding"))
             {
                 SceneManager.LoadScene(Hub, LoadSceneMode.Single);
                 Debug.Log(_button.tag);

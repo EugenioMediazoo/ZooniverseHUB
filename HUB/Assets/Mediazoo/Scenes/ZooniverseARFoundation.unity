@@ -6026,6 +6026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZooniverseAR: ZooniverseARFoundation
+  Onboarding: Onboarding
   Hub: HUB_UI
 --- !u!4 &1878891932
 Transform:
