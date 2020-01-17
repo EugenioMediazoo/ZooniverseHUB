@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: BRtest2
+  m_Name: test
   m_EditorClassIdentifier: Assembly-CSharp::ChatBubble
-  Text: hiya
-  TextBoxBG: {fileID: 21300000, guid: 2b89d7eb1cc9ce248b8711967233e1b5, type: 3}
+  Text: 123
+  TextBoxBG: {fileID: 21300000, guid: 16e05f0f513f0e7498dd3ab96943caec, type: 3}

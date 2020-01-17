@@ -28,7 +28,7 @@ public class SceneLauncher : MonoBehaviour
             }
             else if (_button.CompareTag("Onboarding"))
             {
-                SceneManager.LoadScene(Hub, LoadSceneMode.Single);
+                SceneManager.LoadScene(Onboarding, LoadSceneMode.Single);
                 Debug.Log(_button.tag);
             }
             else

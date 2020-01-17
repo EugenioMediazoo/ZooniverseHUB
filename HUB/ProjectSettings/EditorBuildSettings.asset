@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mediazoo/Scenes/ZooniverseARFoundation.unity
     guid: d1f382c734ddc0841ac55e8d867517c8
+  - enabled: 1
+    path: Assets/Mediazoo/Scenes/Onboarding.unity
+    guid: 73dd546064cec9b438d3de7b740a54fa
   m_configObjects: {}
