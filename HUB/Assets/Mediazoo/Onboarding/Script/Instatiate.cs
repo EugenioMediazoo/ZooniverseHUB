@@ -28,11 +28,14 @@ public class Instatiate : MonoBehaviour
     public ChatBubble brtest;
     public ChatBubble brtest2;
 
+    private float SP;
 
     private void Awake()
     {
         time = 0.5f;
         //blright = "test";
+        SP = ChatContainer.GetComponent<VerticalLayoutGroup>().spacing;
+
     }
     
 
@@ -115,25 +118,42 @@ public class Instatiate : MonoBehaviour
         newChatBubble.GetComponent<ChatBubbleDisplay>().chatBubble = brtest2;
     }
 
+    private string label02= "Hello World";
+
     public void F()
     {
         newChatBubble = Instantiate(ChatF, ChatContainer.transform);
         var newTextTMP = newChatBubble.GetComponent<ChatReference>().Text;
-        newTextTMP.SetText("Hello World");
+        newTextTMP.text = label02;
 
-        G();
+        var newTextCanvas = newChatBubble.GetComponent<CanvasGroup>();
+        DOTween.To(() => newTextCanvas.alpha, x => newTextCanvas.alpha = x, 1, time).SetEase(Ease.InQuad);
     }
+
+    private string label01 = "Example <sprite=2> of using <sprite=7> <#ffa000>Graphics Inline</color> <sprite=5> with Text in <font=\"Bangers SDF\" material=\"Bangers SDF - Drop Shadow\">TextMesh<#40a0ff>Pro</color></font><sprite=0> and Unity<sprite=1>";
 
     public void G()
     {
         newChatBubble = Instantiate(ChatF, ChatContainer.transform);
         var newTextTMP = newChatBubble.GetComponent<ChatReference>().Text;
-        newTextTMP.SetText("we are living!!!");
+        newTextTMP.text = label01;
+
+        var newTextCanvas = newChatBubble.GetComponent<CanvasGroup>();
+        Debug.Log(newTextCanvas.alpha);
+        DOTween.To(() => newTextCanvas.alpha, x => newTextCanvas.alpha = x, 1, time).SetEase(Ease.InQuad);
+        Debug.Log(newTextCanvas.alpha);
+        //newTextTMP.SetText("Hi how are you doing, this is gonna be a really long message buahahahahah!!!");
+        //SP = 0.01f;
+        //SP = 0f;
+
+        //var RT = newChatBubble.GetComponent<RectTransform>().sizeDelta;
+        //Debug.Log(RT);
+        //RT = RT + new Vector2(0,218);
     }
 
-    //public void Order()
-    //{
-    //    this.GetComponent<VerticalLayoutGroup>().spacing = 0.1f;
-    //    this.GetComponent<VerticalLayoutGroup>().spacing = 0.0f;
-    //}
-}
+        //public void Order()
+        //{
+        //    this.GetComponent<VerticalLayoutGroup>().spacing = 0.1f;
+        //    this.GetComponent<VerticalLayoutGroup>().spacing = 0.0f;
+        //}
+    }

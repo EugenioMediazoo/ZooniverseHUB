@@ -52,31 +52,42 @@ namespace TMPro.Examples
 
 
             int totalVisibleCharacters = m_textMeshPro.textInfo.characterCount; // Get # of Visible Character in text object
+            Debug.Log(totalVisibleCharacters);
             int counter = 0;
             int visibleCount = 0;
 
             while (true)
+            //if(counter <= totalVisibleCharacters)
             {
                 visibleCount = counter % (totalVisibleCharacters + 1);
+               
 
                 m_textMeshPro.maxVisibleCharacters = visibleCount; // How many characters should TextMeshPro display?
 
+                m_textMeshPro.text = label02;
+
+                Debug.Log(visibleCount);
                 // Once the last character has been revealed, wait 1.0 second and start over.
-                if (visibleCount >= totalVisibleCharacters)
-                {
-                    yield return new WaitForSeconds(1.0f);
-                    m_textMeshPro.text = label02;
-                    yield return new WaitForSeconds(1.0f);
-                    m_textMeshPro.text = label01;
-                    yield return new WaitForSeconds(1.0f);
-                }
+                //if (visibleCount >= totalVisibleCharacters)
+                // {
+                //    Debug.Log("test");
+                //    yield return new WaitForSeconds(1.0f);
+                //    m_textMeshPro.text = label02;
+                //yield return new WaitForSeconds(1.0f);
+                // m_textMeshPro.text = label01;
+                // yield return new WaitForSeconds(1.0f);
+                // }
 
-                //counter += 1;
+                counter += 1;
 
-                //yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.05f);
+
+                if (visibleCount == totalVisibleCharacters)
+                    break;
             }
 
-            //Debug.Log("Done revealing the text.");
+
+            Debug.Log("Done revealing the text.");
         }
 
     }
