@@ -12,6 +12,7 @@ public class Instatiate : MonoBehaviour
 
     public GameObject ChatLeft;
     public GameObject ChatRight;
+    public GameObject ChatF;
 
     //public string blright;
     //private TextMeshProUGUI TM;
@@ -86,13 +87,14 @@ public class Instatiate : MonoBehaviour
             newChatBubble.GetComponent<ChatBubbleDisplay>().chatBubble = brtest2;
         }
 
-            //if (Input.GetKeyDown(KeyCode.R))
-            //{
-            //    var newChatBubble = Instantiate(ChatRight, ChatContainer.transform);
-            //    var newTextTMP = GameObject.Find("HorizontalChatR/Textbox Container/Textbox BG/Text (TMP)");
-            //    newTextTMP.GetComponent<TextMeshProUGUI>().SetText(blright);
-            //}
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            var newChatBubble = Instantiate(ChatRight, ChatContainer.transform);
+            var newTextTMP = GameObject.Find("HorizontalChatR/Textbox Container/Textbox BG/Text (TMP)");
+            //newTextTMP.GetComponent<TextMeshProUGUI>().SetText(blright2);
+            newTextTMP.GetComponent<TextMeshProUGUI>().SetText("The first number is {0} and the 2nd is {1:2} and the 3rd is {3:0}.", 4, 6.345f, 3.5f);
         }
+    }
 
 
     public void L()
@@ -104,6 +106,29 @@ public class Instatiate : MonoBehaviour
     {
         newChatBubble = Instantiate(ChatRight, ChatContainer.transform);
         newChatBubble.GetComponent<ChatBubbleDisplay>().chatBubble = brtest;
+
+        newChatBubble = Instantiate(ChatRight, ChatContainer.transform);
+        var newTextTMP = newChatBubble.GetComponent<ChatReference>().Text;
+        newTextTMP.SetText("Hello World");
+        //newTextTMP.GetComponent<TextMeshProUGUI>().SetText(blright);
+
+        newChatBubble.GetComponent<ChatBubbleDisplay>().chatBubble = brtest2;
+    }
+
+    public void F()
+    {
+        newChatBubble = Instantiate(ChatF, ChatContainer.transform);
+        var newTextTMP = newChatBubble.GetComponent<ChatReference>().Text;
+        newTextTMP.SetText("Hello World");
+
+        G();
+    }
+
+    public void G()
+    {
+        newChatBubble = Instantiate(ChatF, ChatContainer.transform);
+        var newTextTMP = newChatBubble.GetComponent<ChatReference>().Text;
+        newTextTMP.SetText("we are living!!!");
     }
 
     //public void Order()
