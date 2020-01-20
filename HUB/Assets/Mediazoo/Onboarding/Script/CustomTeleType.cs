@@ -62,7 +62,7 @@ namespace TMPro.Examples
 
                 counter += 1;
 
-                yield return new WaitForSeconds(0.05f);  //reveal Speed
+                yield return new WaitForSeconds(0.04f);  //reveal Speed
 
                 if (visibleCount == totalVisibleCharacters)
                     break;
