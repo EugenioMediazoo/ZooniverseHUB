@@ -36,7 +36,7 @@ public class ParagraphManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke("_Starter", 2);
+        Invoke("_Starter", 4);
     }
 
     public void _Starter()

@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
     public float time;
 
     //bool
-    private bool Show = true;
+    private bool Show = false;
 
     public void Awake()
     {
@@ -27,12 +27,12 @@ public class Menu : MonoBehaviour
     {
         if (Show)
         {
-            MenuBar.transform.DOLocalMoveY(0, time).SetEase(Ease.InOutQuad);
+            MenuBar.transform.DOLocalMoveY(-325, time).SetEase(Ease.InOutQuad);
             Show =! Show;
         }
         else if (!Show)
         {
-            MenuBar.transform.DOLocalMoveY(900, time).SetEase(Ease.InOutQuad);
+            MenuBar.transform.DOLocalMoveY(325, time).SetEase(Ease.InOutQuad);
             Show =! Show;
         }
     }
