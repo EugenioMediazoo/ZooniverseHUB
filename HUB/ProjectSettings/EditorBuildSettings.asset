@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mediazoo/Scenes/Onboarding.unity
     guid: 73dd546064cec9b438d3de7b740a54fa
+  - enabled: 1
+    path: Assets/Mediazoo/Scenes/OnboardingAR.unity
+    guid: 99ec01e78e35a154291a684e1aa8c8a9
   m_configObjects: {}
