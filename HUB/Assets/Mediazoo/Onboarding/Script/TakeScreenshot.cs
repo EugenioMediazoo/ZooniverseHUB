@@ -6,10 +6,28 @@ public class TakeScreenshot : MonoBehaviour {
 
 	[SerializeField]
 	GameObject blink;
+	
+	public GameObject backButton;
+	public GameObject GalleryButton;
+	public GameObject ScrenshotButton;
+
+	private CanvasGroup CanvasG;
+	private CanvasGroup GalleryButtonG;
+	private CanvasGroup ScrenshotButtonG;
+
+	private void Start()
+	{
+		CanvasG = backButton.GetComponent<CanvasGroup>();
+		GalleryButtonG = GalleryButton.GetComponent<CanvasGroup>();
+		ScrenshotButtonG = ScrenshotButton.GetComponent<CanvasGroup>();
+	}
 
 	public void TakeAShot()
 	{
 		StartCoroutine ("CaptureIt");
+		CanvasG.alpha = 0;
+		GalleryButtonG.alpha = 0;
+		ScrenshotButtonG.alpha= 0;
 	}
 
 	IEnumerator CaptureIt()
@@ -27,6 +45,9 @@ public class TakeScreenshot : MonoBehaviour {
 	public void DeactivateBlink()
 	{
 		blink.SetActive(false);
+		CanvasG.alpha = 1;
+		GalleryButtonG.alpha = 1;
+		ScrenshotButtonG.alpha = 1;
 	}
 
 

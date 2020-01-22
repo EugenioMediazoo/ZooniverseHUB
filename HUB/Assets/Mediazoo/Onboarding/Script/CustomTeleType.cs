@@ -36,8 +36,8 @@ namespace TMPro.Examples
 
             if (QNA_Object != null)
                 NextQnA = QNA_Object.GetComponent<QNA>();
-            else if (QNA_Object == null)
-                Debug.Log("Should Return");
+            //else if (QNA_Object == null)
+                //Debug.Log("Should Return");
         }
 
 
@@ -73,7 +73,7 @@ namespace TMPro.Examples
             else if (Options !=null && Show!=null)
             {
                 Options.SetActive(true);
-                Options.transform.DOMoveY(Show.transform.position.y, time/2).SetEase(Ease.InQuint).SetDelay(1);
+                Options.transform.DOMoveY(Show.transform.position.y, time).SetEase(Ease.InQuint).SetDelay(1);
             }
 
             //Debug.Log("Done revealing the text.");
