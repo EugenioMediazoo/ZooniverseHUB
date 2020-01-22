@@ -26,12 +26,19 @@ public class ParagraphManager : MonoBehaviour
     ////debug
     //public bool test = false;
 
+    public GameObject QNA_ObjectOne;
+    //scripts
+    private QNA QnAOne;
+
     public void Awake()
     {
         if (time == 0)
             time = 0.8f;
         else
             return;
+
+        if (QNA_ObjectOne != null)
+            QnAOne = QNA_ObjectOne.GetComponent<QNA>();
     }
 
     private void Start()
@@ -51,6 +58,12 @@ public class ParagraphManager : MonoBehaviour
         OptionOneContainer.SetActive(true);
         OptionOneContainer.transform.DOMoveY(Hide.transform.position.y, time / 2).SetEase(Ease.InQuint);
     }
+
+    public void EmailEntered()
+    {
+        QnAOne.Invoke("Dialogue", 0.5f);
+    }
+    
 
     #region Debug
     //private void Update()
