@@ -11,19 +11,31 @@ public class TakeScreenshot : MonoBehaviour {
 	public GameObject GalleryButton;
 	public GameObject ScrenshotButton;
 
+	public GameObject DaysAndMood;
+	public GameObject Scanning;
+
 	private CanvasGroup CanvasG;
 	private CanvasGroup GalleryButtonG;
 	private CanvasGroup ScrenshotButtonG;
+	private CanvasGroup DaysAndMoodG;
+	private CanvasGroup ScanningG;
 
 	private void Start()
 	{
 		CanvasG = backButton.GetComponent<CanvasGroup>();
 		GalleryButtonG = GalleryButton.GetComponent<CanvasGroup>();
 		ScrenshotButtonG = ScrenshotButton.GetComponent<CanvasGroup>();
+		DaysAndMoodG = DaysAndMood.GetComponent<CanvasGroup>();
+		ScanningG = Scanning.GetComponent<CanvasGroup>();
+
+		//Scanning.SetActive(true);
 	}
 
 	public void TakeAShot()
 	{
+		DaysAndMoodG.alpha = 1;
+		ScanningG.alpha = 0;
+
 		StartCoroutine ("CaptureIt");
 		CanvasG.alpha = 0;
 		GalleryButtonG.alpha = 0;
@@ -48,6 +60,9 @@ public class TakeScreenshot : MonoBehaviour {
 		CanvasG.alpha = 1;
 		GalleryButtonG.alpha = 1;
 		ScrenshotButtonG.alpha = 1;
+
+		DaysAndMoodG.alpha = 0;
+		ScanningG.alpha = 1;
 	}
 
 

@@ -2826,7 +2826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FocusMode: 1
-  m_LightEstimationMode: 0
+  m_LightEstimationMode: 2
 --- !u!114 &1042599431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6028,6 +6028,9 @@ MonoBehaviour:
   ZooniverseAR: ZooniverseARFoundation
   Onboarding: Onboarding
   Hub: HUB_UI
+  AROnboarding: 
+  ARGallery: 
+  Test: 
 --- !u!4 &1878891932
 Transform:
   m_ObjectHideFlags: 0
@@ -6102,6 +6105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManagerUI: {fileID: 0}
   RaycastUI: {fileID: 1878891933}
+  NextPrevious: {fileID: 0}
   minTime: 0
   maxTime: 0
   minSwipeDist: 0

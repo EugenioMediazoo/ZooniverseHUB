@@ -8,6 +8,7 @@ public class RotateAR : MonoBehaviour
     [Range(-100f, 100f)]
     public float speed;
 
+
     // Update is called once per frame
     void Update()
     {

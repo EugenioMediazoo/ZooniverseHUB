@@ -19,6 +19,7 @@ namespace TMPro.Examples
         public GameObject QNA_Object;
         public GameObject Options;
         public GameObject Show;
+        public GameObject Hide;
 
         //scripts
         private QNA NextQnA;
@@ -72,6 +73,7 @@ namespace TMPro.Examples
                 NextQnA.Invoke("Dialogue", 0.5f);
             else if (Options !=null && Show!=null)
             {
+                Options.transform.position = Hide.transform.position;
                 Options.SetActive(true);
                 Options.transform.DOMoveY(Show.transform.position.y, 0.8f).SetEase(Ease.InQuint).SetDelay(1);
             }
