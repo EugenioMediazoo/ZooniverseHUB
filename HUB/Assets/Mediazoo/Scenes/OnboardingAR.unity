@@ -248,12 +248,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Point the camera towards your face and tap on the camera button a the bottom
-    to shoot!
+  m_text: 'Point the device towards your face and tap on the camera button at the
+    bottom of the screen to take a selfie.
 
 
-    Once your are done tap on the gallery button, in the upper right corner to check
-    out your pic!'
+    Once your are done, tap on the gallery button in the upper right corner to check
+    out your photo!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3b95358ea882da4cb4807a1aaf9924c, type: 2}
   m_sharedMaterial: {fileID: 1695606613668374106, guid: f3b95358ea882da4cb4807a1aaf9924c,
@@ -323,12 +323,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 218858923}
-    characterCount: 182
+    characterCount: 207
     spriteCount: 0
-    spaceCount: 36
-    wordCount: 36
+    spaceCount: 41
+    wordCount: 41
     linkCount: 0
-    lineCount: 7
+    lineCount: 8
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Days left: \n14dd"
+  m_text: "Days left: \n14"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3b95358ea882da4cb4807a1aaf9924c, type: 2}
   m_sharedMaterial: {fileID: 1695606613668374106, guid: f3b95358ea882da4cb4807a1aaf9924c,
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 913728134}
-    characterCount: 16
+    characterCount: 14
     spriteCount: 0
     spaceCount: 3
     wordCount: 3
