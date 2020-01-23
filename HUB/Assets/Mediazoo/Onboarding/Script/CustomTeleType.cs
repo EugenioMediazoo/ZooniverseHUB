@@ -73,7 +73,7 @@ namespace TMPro.Examples
             else if (Options !=null && Show!=null)
             {
                 Options.SetActive(true);
-                Options.transform.DOMoveY(Show.transform.position.y, time).SetEase(Ease.InQuint).SetDelay(1);
+                Options.transform.DOMoveY(Show.transform.position.y, 0.8f).SetEase(Ease.InQuint).SetDelay(1);
             }
 
             //Debug.Log("Done revealing the text.");

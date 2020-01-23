@@ -26,9 +26,15 @@ public class ParagraphManager : MonoBehaviour
     ////debug
     //public bool test = false;
 
-    public GameObject QNA_ObjectOne;
+    //Input fields
+    public GameObject QNA_AfterEmail;
+    public GameObject QNA_AfterName;
+    public GameObject QNA_AfterDate;
+
     //scripts
-    private QNA QnAOne;
+    private QNA QNA_Email;
+    private QNA QNA_Name;
+    private QNA QNA_Date;
 
     public void Awake()
     {
@@ -37,8 +43,14 @@ public class ParagraphManager : MonoBehaviour
         else
             return;
 
-        if (QNA_ObjectOne != null)
-            QnAOne = QNA_ObjectOne.GetComponent<QNA>();
+        if (QNA_AfterEmail != null)
+            QNA_Email = QNA_AfterEmail.GetComponent<QNA>();
+
+        if (QNA_AfterName != null)
+            QNA_Name = QNA_AfterName.GetComponent<QNA>();
+
+        if (QNA_AfterDate != null)
+            QNA_Date = QNA_AfterDate.GetComponent<QNA>();
     }
 
     private void Start()
@@ -61,9 +73,19 @@ public class ParagraphManager : MonoBehaviour
 
     public void EmailEntered()
     {
-        QnAOne.Invoke("Dialogue", 0.5f);
+        QNA_Email.Invoke("Dialogue", 0.5f);
     }
-    
+
+    public void NameEntered()
+    {
+        QNA_Name.Invoke("Dialogue", 0.5f);
+    }
+
+    public void DateEntered()
+    {
+        QNA_Date.Invoke("Dialogue", 0.5f);
+    }
+
 
     #region Debug
     //private void Update()
