@@ -21,6 +21,9 @@ public class Menu : MonoBehaviour
             time = 0.8f;
         else
             return;
+
+        Invoke("HideOnLoad", 5);
+        //Debug.Log("test");
     }
 
     public void ShowHideMenu()
@@ -35,6 +38,12 @@ public class Menu : MonoBehaviour
             MenuBar.transform.DOLocalMoveY(325, time).SetEase(Ease.InOutQuad);
             Show =! Show;
         }
+    }
+
+    public void HideOnLoad()
+    {
+        MenuBar.transform.DOLocalMoveY(325, time).SetEase(Ease.InOutQuad);
+        Show = !Show;
     }
     
 }
