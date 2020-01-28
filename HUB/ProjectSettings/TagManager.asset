@@ -10,6 +10,10 @@ TagManager:
   - lioness
   - Hub
   - london
+  - Onboarding
+  - TEST
+  - ARGallery
+  - AROnboarding
   layers:
   - Default
   - TransparentFX

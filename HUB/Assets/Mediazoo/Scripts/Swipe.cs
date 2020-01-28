@@ -9,6 +9,7 @@ public class Swipe : MonoBehaviour
     //scripts
     public UIManagerHUB ManagerUI;
     public RaycastUIManager RaycastUI;
+    public  ScreenshotPreview NextPrevious;
 
     //swipe variables
     [Range(0.1f, 10f)]
@@ -39,6 +40,11 @@ public class Swipe : MonoBehaviour
         if (RaycastUI != null)
         {
             RaycastUIManager RaycastUI = GetComponent<RaycastUIManager>();
+        }
+
+        if (NextPrevious != null)
+        {
+            ScreenshotPreview NextPrevious = GetComponent<ScreenshotPreview>();
         }
 
         buttonDividerLow = Screen.height / 8;
@@ -93,10 +99,20 @@ public class Swipe : MonoBehaviour
             if (distance.x > 0)
             {
                 Debug.Log("Right Swipe");
+
+                if (NextPrevious != null)
+                {
+                    NextPrevious.NextPicture();
+                }
             }
             else if (distance.x < 0)
             {
                 Debug.Log("Left Swipe");
+
+                if (NextPrevious != null)
+                {
+                    NextPrevious.PreviousPicture();
+                }
             }
         }
         #endregion

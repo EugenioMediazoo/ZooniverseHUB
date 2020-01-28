@@ -17,6 +17,8 @@ public class PlaceOnPlane : MonoBehaviour
     [Tooltip("Instantiates this prefab on a plane at the touch location.")]
     public GameObject m_PlacedPrefab;
 
+    //public GameObject Highlighter;
+
     /// <summary>
     /// The prefab to instantiate on touch.
     /// </summary>
@@ -50,6 +52,8 @@ public class PlaceOnPlane : MonoBehaviour
 
         UI_Off = true;
         ObjectPlaced = false;
+
+        //Highlighter.SetActive(false);
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
@@ -99,6 +103,11 @@ public class PlaceOnPlane : MonoBehaviour
                 spawnedObject = m_PlacedPrefab;
                 m_PlacedPrefab.transform.position = hitPose.position;
                 m_PlacedPrefab.transform.rotation = hitPose.rotation;
+
+                //Highlighter.SetActive(true);
+                //Highlighter.transform.position = hitPose.position;
+                //Not needed since the highlighter is round
+                //Highlighter.transform.rotation = hitPose.rotation;
 
                 ObjectPlaced = true;
 
@@ -164,6 +173,7 @@ public class PlaceOnPlane : MonoBehaviour
     public void ClearSpawning()
     {
         m_PlacedPrefab.SetActive(false);
+        //Highlighter.SetActive(false);
 
         ObjectPlaced = false;
         m_ARPlaneManager.enabled = true;

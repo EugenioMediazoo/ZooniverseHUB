@@ -8,25 +8,38 @@ using UnityEngine.UI;
 
 public class UIManagerHUB : MonoBehaviour
 {
+    //placeholders
+    public GameObject CaseStudyUpV;
+    Vector3 CaseStudyUp;
+    public GameObject CaseStudyDownV;
+    Vector3 CaseStudyDown;
+    public GameObject AboutUpV;
+    Vector3 AboutUp;
+    public GameObject AboutDownV;
+    Vector3 AboutDown;
+
+    public GameObject InteractiveTiles;
+
+    public GameObject InteractiveTilesUpV;
+    Vector3 InteractiveTilesUp;
+    public GameObject InteractiveTilesDownV;
+    Vector3 InteractiveTilesDown;
+
+
     //Images and gameObjects
     public Image CaseStudy;
     public Image About;
+
     public Image CaseStudyArrow;
-        //public CanvasGroup CanvasG;
-        public GameObject CaseStudyButtonObj;
-        private CanvasGroup CaseStudyButtonCanvas;
+    public GameObject CaseStudyButtonObj;
+    private CanvasGroup CaseStudyButtonCanvas;
+
     public Image AboutArrow;
-        //public CanvasGroup CanvasG;
-        public GameObject AboutButtonObj;
-        private CanvasGroup AboutButtonCanvas;
+    public GameObject AboutButtonObj;
+    private CanvasGroup AboutButtonCanvas;
 
-    public CanvasGroup InteractiveTiles;
+    
 
-    //public GameObject ContainerRatio;
-    public RectTransform ContainerRatio;
-
-    //Vector3
-    private Vector3 CurrentPos;
 
     //time
     [Range(0.01f, 3f)]
@@ -39,7 +52,6 @@ public class UIManagerHUB : MonoBehaviour
     //Heights
     private float screenHeight;
     private float screenWidth;
-    private float _ratio;
 
     //bools
     public bool CaseStudyStatus;
@@ -47,217 +59,94 @@ public class UIManagerHUB : MonoBehaviour
 
     private void Awake()
     {
-        screenHeight = Screen.height;
-        screenWidth = Screen.width;
         CaseStudyStatus = false;
         AboutStatus = false;
 
-        _ratio = Screen.height / Screen.width;
-        Debug.Log(_ratio + "," + Screen.width + "," + Screen.height);
+        CaseStudyUp = CaseStudyUpV.transform.position;
+        CaseStudyDown = CaseStudyDownV.transform.position;
+        AboutUp = AboutUpV.transform.position;
+        AboutDown = AboutDownV.transform.position;
 
-        if (_ratio >= .9f && _ratio <= 1.99f)
-        {
-            Debug.Log("9:16");
+        InteractiveTilesUp = InteractiveTilesUpV.transform.position;
+        InteractiveTilesDown = InteractiveTilesDownV.transform.position;
 
-            ContainerRatio.anchoredPosition = new Vector2(0, 200f);
-            Debug.Log(ContainerRatio.anchoredPosition);
-        }
-        else if (_ratio >= 2f && _ratio <= 2.09f)
-        {
-            Debug.Log("9:18");
-            Debug.Log(ContainerRatio.anchoredPosition);
-        }
-        else /*if (ratio >= 2.15f)*/
-        {
-            Debug.Log("9:19.5");
+        InteractiveTiles.transform.position = new Vector3(InteractiveTiles.transform.position.x, InteractiveTilesDown.y, InteractiveTiles.transform.position.z);
 
-            ContainerRatio.anchoredPosition = new Vector2(0, -200f);
-            Debug.Log(ContainerRatio.anchoredPosition);
-        }
-
-        CurrentPos = InteractiveTiles.transform.position;
+        CaseStudy.transform.position = CaseStudyDown;
+        About.transform.position = AboutDown;
 
         CaseStudyButtonCanvas = CaseStudyButtonObj.GetComponent<CanvasGroup>();
         AboutButtonCanvas = AboutButtonObj.GetComponent<CanvasGroup>();
     }
 
-    #region START
-    //void Start()
-    //{
-    //    ratio = Screen.height / Screen.width;
-    //    Debug.Log(ratio + "," + Screen.width + "," + Screen.height);
-
-    //    if (ratio >= .9f && ratio <= 1.99f)
-    //    {
-    //        Debug.Log("9:16");
-
-    //        ContainerRatio.anchoredPosition = new Vector2(0, 200f);
-    //        Debug.Log(ContainerRatio.anchoredPosition);
-    //    }
-    //    else if (ratio >= 2f && ratio <= 2.09f)
-    //    {
-    //        Debug.Log("9:18");
-    //        Debug.Log(ContainerRatio.anchoredPosition);
-
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("9:19.5");
-
-    //        ContainerRatio.anchoredPosition = new Vector2(0, -200f);
-    //        Debug.Log(ContainerRatio.anchoredPosition);
-    //    }
-    //}
-    #endregion
-
-    #region UPDATE
-    //private void Update()
-    //{
-    //    Debug.Log(Screen.height + "," + Screen.width);
-    //    Debug.Log(ratio);
-    //}
-    #endregion
-
     public void CaseStudySlider()
     {
-        Debug.Log(_ratio);
-
-        if (_ratio <= 1.99f)
+        if (!CaseStudyStatus)
         {
-            if (!CaseStudyStatus)
-            {
-                CaseStudy.transform.DOMoveY((screenHeight * 0.36f), time).SetEase(Ease.InOutCirc);
-                CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.LocalAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
+            CaseStudy.transform.DOMoveY(CaseStudyUp.y, time).SetEase(Ease.InOutCirc);
+            CaseStudyStatus = !CaseStudyStatus;
+            CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.LocalAxisAdd).SetEase(Ease.InOutCirc);
+            DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
 
-                InteractiveTiles.transform.DOLocalMoveY((screenHeight * 1.8f), time).SetEase(Ease.InOutCirc);
-            }
-            else if (CaseStudyStatus && !AboutStatus)
-            {
-                CaseStudy.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.InOutCirc);
-                CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
-
-                InteractiveTiles.transform.DOMoveY(CurrentPos.y,time).SetEase(Ease.InOutCirc);
-            }
-            else if (CaseStudyStatus && AboutStatus)
-            {
-                CaseStudy.transform.DOMoveY(((screenHeight * 0.32f) * -1), time).SetEase(Ease.InOutCirc);
-                CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
-
-                InteractiveTiles.transform.DOMoveY(CurrentPos.y, time).SetEase(Ease.InOutCirc);
-
-                About.transform.DOMoveY(((screenHeight * 0.443f) * -1), time).SetEase(Ease.InOutCirc);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
-            }
+            InteractiveTiles.transform.DOMoveY(InteractiveTilesUp.y, time).SetEase(Ease.InOutCirc);
         }
-        else if (_ratio >= 2f)
+        else if (CaseStudyStatus && !AboutStatus)
         {
-            if (!CaseStudyStatus)
-            {
-                CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.InOutCirc);
-                CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.LocalAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
+            CaseStudy.transform.DOMoveY(CaseStudyDown.y, time).SetEase(Ease.InOutCirc);
+            CaseStudyStatus = !CaseStudyStatus;
+            CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
+            DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
 
-                InteractiveTiles.transform.DOLocalMoveY((screenHeight * 2f), time).SetEase(Ease.InOutCirc);
-            }
-            else if (CaseStudyStatus && !AboutStatus)
-            {
-                CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.InOutCirc);
-                CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
+            InteractiveTiles.transform.DOMoveY(InteractiveTilesDown.y, time).SetEase(Ease.InOutCirc);
+        }
+        else if (CaseStudyStatus && AboutStatus)
+        {
+            CaseStudy.transform.DOMoveY(CaseStudyDown.y, time).SetEase(Ease.InOutCirc);
+            CaseStudyStatus = !CaseStudyStatus;
+            CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
+            DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
 
-                InteractiveTiles.transform.DOMoveY(CurrentPos.y, time).SetEase(Ease.InOutCirc);
-            }
-            else if (CaseStudyStatus && AboutStatus)
-            {
-                CaseStudy.transform.DOMoveY(((screenHeight / 3.59f) * -1), time).SetEase(Ease.InOutCirc);
-                CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
+            InteractiveTiles.transform.DOMoveY(InteractiveTilesDown.y, time).SetEase(Ease.InOutCirc);
 
-                InteractiveTiles.transform.DOMoveY(CurrentPos.y, time).SetEase(Ease.InOutCirc);
-
-                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.InOutCirc);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
-            }
+            About.transform.DOMoveY(AboutDown.y, time).SetEase(Ease.InOutCirc);
+            AboutStatus = !AboutStatus;
+            AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
+            DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
         }
     }
 
     public void AboutSlider()
     {
-        if (_ratio <= 1.99f)
+
+        if (!AboutStatus && !CaseStudyStatus)
         {
-            if (!AboutStatus && !CaseStudyStatus)
-            {
-                About.transform.DOMoveY((screenHeight * 0.24f), time).SetEase(Ease.InOutCirc);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
+            About.transform.DOMoveY(AboutUp.y, time).SetEase(Ease.InOutCirc);
+            AboutStatus = !AboutStatus;
+            AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
+            DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
 
-                InteractiveTiles.transform.DOLocalMoveY((screenHeight * 1.8f), time).SetEase(Ease.InOutCirc);
+            InteractiveTiles.transform.DOMoveY(InteractiveTilesUp.y, time).SetEase(Ease.InOutCirc);
 
-                CaseStudy.transform.DOMoveY((screenHeight * 0.36f), time).SetEase(Ease.InOutCirc);
-                CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
-            }
-            else if (!AboutStatus && CaseStudyStatus)
-            {
-                About.transform.DOMoveY((screenHeight * 0.24f), time).SetEase(Ease.InOutCirc);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
-            }
-            else if (AboutStatus)
-            {
-                About.transform.DOMoveY(((screenHeight * 0.443f) * -1), time).SetEase(Ease.InOutCirc);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
-            }
+            CaseStudy.transform.DOMoveY(CaseStudyUp.y, time).SetEase(Ease.InOutCirc);
+            CaseStudyStatus = !CaseStudyStatus;
+            CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
+            DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
         }
-        else if (_ratio >= 2f)
+        else if (!AboutStatus && CaseStudyStatus)
         {
-            if (AboutStatus)
-            {
-                About.transform.DOMoveY(((screenHeight / 2.57f) * -1), time).SetEase(Ease.InOutCirc);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
-            }
-            else if (!AboutStatus && CaseStudyStatus)
-            {
-                About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.InOutCirc);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
-            }
-            else if (!AboutStatus && !CaseStudyStatus)
-            {
-                About.transform.DOMoveY((screenHeight / 3.46f), time).SetEase(Ease.InOutCirc);
-                AboutStatus = !AboutStatus;
-                AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
-
-                InteractiveTiles.transform.DOLocalMoveY((screenHeight * 2f), time).SetEase(Ease.InOutCirc);
-
-                CaseStudy.transform.DOMoveY((screenHeight / 2.5f), time).SetEase(Ease.InOutCirc);
-                CaseStudyStatus = !CaseStudyStatus;
-                CaseStudyArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
-                DOTween.To(() => CaseStudyButtonCanvas.alpha, x => CaseStudyButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
-            }
+            About.transform.DOMoveY(AboutUp.y, time).SetEase(Ease.InOutCirc);
+            AboutStatus = !AboutStatus;
+            AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
+            DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 1, AnimationSpeed).SetEase(Ease.InQuad);
         }
+        else if (AboutStatus)
+        {
+            About.transform.DOMoveY(AboutDown.y, time).SetEase(Ease.InOutCirc);
+            AboutStatus = !AboutStatus;
+            AboutArrow.transform.DORotate(new Vector3(0, 0, 180), time, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc);
+            DOTween.To(() => AboutButtonCanvas.alpha, x => AboutButtonCanvas.alpha = x, 0, AnimationSpeed).SetEase(Ease.InQuad);
+        }
+
     }
 
 }
