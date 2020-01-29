@@ -4592,7 +4592,7 @@ MonoBehaviour:
   ZooniverseAR: ZooniverseARFoundation
   Onboarding: Onboarding
   Hub: HUB_UI
-  AROnboarding: OnboardingAR
+  AROnboarding: HUB_AR
   ARGallery: OnboardingARGallery
   Test: 
 --- !u!1 &1113883043
