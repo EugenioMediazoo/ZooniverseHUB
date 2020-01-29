@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 443198700}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Hub
+  m_TagString: AROnboarding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1399,7 +1399,7 @@ MonoBehaviour:
   ZooniverseAR: ZooniverseARFoundation
   Onboarding: Onboarding
   Hub: HUB_UI
-  AROnboarding: 
+  AROnboarding: OnboardingAR
   ARGallery: 
 --- !u!1 &1076616268
 GameObject:
@@ -2799,7 +2799,6 @@ GameObject:
   - component: {fileID: 1878891931}
   - component: {fileID: 1878891933}
   - component: {fileID: 1878891934}
-  - component: {fileID: 1878891935}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Hub
@@ -2885,24 +2884,6 @@ MonoBehaviour:
   AnimationSpeed: 1.5
   distX: 490
   distY: 370
---- !u!114 &1878891935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878891930}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1da23879fc92e443a6b0844c0ebaf46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ManagerUI: {fileID: 0}
-  RaycastUI: {fileID: 1878891933}
-  NextPrevious: {fileID: 0}
-  minTime: 0
-  maxTime: 0
-  minSwipeDist: 0
 --- !u!1 &1948983081
 GameObject:
   m_ObjectHideFlags: 0
